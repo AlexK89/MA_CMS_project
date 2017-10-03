@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vasile Cojusco | Software engineer</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+	<nav>
+		<div class="container hover">
+			<div class="toggle"><a class="toggle_ancher" onclick="toggle_menu(event)"><i class="fa fa-bars fa-3x" aria-hidden="true"></i></a></div>
+			<ul id="menu">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="portfolio.html">Portfolio</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</div>
+	</nav>
+	<section class="header">
+		<div class="header_background"></div>
+		<div class="container header_content">
+			<h4>What to Chat?</h4>
+			<h1>Write me an email directly from here</h1>
+			<a class="button" href="mailto:someone@example.com">Send an email</a>
+		</div>
+	</section>
+	<section class="principles">
+			<div class="principles_row">
+				<div class="principles_row_block">
+					<div class="filter"></div>
+					<div class="filter2"></div>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3880.7229213078367!2d-2.3618027296691957!3d51.378977132580644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2suk!4v1504694943902" frameborder="0"  allowfullscreen></iframe>
+				</div>
+				<div class="principles_row_description inline_block">
+					<h2>Contacts</h2>
+					<p>
+						I really interested in valuable and interesting propousals.
+					</p>
+					<h4>Bristol</h4>
+					<p>E14AN, Some st. 1</p>
+					<p><a href="mailto:someone@example.com">someone@example.com</a></p>
+				</div>
+			</div>
+	</section>
+	<footer>
+		<p>&copy; Copyright by Vasile Cojusco.</p>
+	</footer>
+	<script src="./js/jquery-3.2.1.min.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		var hide = function(event) {
+				document.getElementById("menu").style.top = "-455px";
+				document.getElementsByClassName("toggle_ancher")[0].style.color = "#fff"; 
+		};
+	    function toggle_menu(event) {
+			event.stopPropagation();
+			if(document.getElementById("menu").style.top == "0px") {
+				document.getElementById("menu").style.top = "-455px";
+				document.getElementsByClassName("toggle_ancher")[0].style.color = "#fff";
+			} 
+			else {
+				document.addEventListener('touchend', hide, false);
+				document.addEventListener('click', hide, false);
+				document.getElementById("menu").style.top = "0";
+				document.getElementsByClassName("toggle_ancher")[0].style.color = "#919294";
+			}
+	    }
+		$(window).scroll(function(e){
+		  parallax();
+		});
+		function parallax(){
+		  var scrolled = $(window).scrollTop();
+		  $('.header_background').css('top',-(scrolled*0.15)+'px');
+		}
+	</script>
+</body>
+</html>

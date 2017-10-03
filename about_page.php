@@ -1,4 +1,5 @@
 <?php include ("about_functions.php"); ?>
+<?php include ("upload.php"); ?>
 
 <!doctype html>
 <html lang="en">
@@ -18,7 +19,7 @@
     <input type="submit" name="update_about" id="update_about" value="UPDATE">
 </form>
 <h3>ADD/Modify content form</h3>
-<form action="about_page.php" method="POST">
+<form action="about_page.php" method="POST" enctype="multipart/form-data">
     <div class="form_block">
         <select name="select_options" id="select_options">
             <option value="add">Add</option>
@@ -28,7 +29,7 @@
         </select>
     </div>
     <div class="form_block">
-        <input type="file" name="i_can_do_icon_url" id="i_can_do_icon_url" placeholder="Icon url">
+        <input type="file" name="file_To_Upload" id="fileToUpload">
     </div>
     <div class="form_block">
         <input type="text" name="i_can_do_label" id="i_can_do_label" placeholder="I can do label">
@@ -42,7 +43,6 @@
         <input type="submit" name="delete" value="DELETE">
     </div>
 </form>
-
 <script>
     var get_data = <?php echo json_encode(get_about_page_items()); ?>;
 
@@ -51,7 +51,6 @@
         if (item === "add") {
             document.getElementById("i_can_do_label").value = "";
             document.getElementById("i_can_do_text").value = "";
-            document.getElementById("i_can_do_icon_url").value = "";
             document.getElementById('update').disabled = true;
             document.getElementById('add').disabled = false;
         } else {
@@ -71,7 +70,6 @@
         get_data.forEach(function(element)
         {
             if(element["i_can_do_label"] === item) {
-                document.getElementById("i_can_do_icon_url").value = element["i_can_do_icon_url"];
                 document.getElementById("i_can_do_label").value = element["i_can_do_label"];
                 document.getElementById("i_can_do_text").value = element["i_can_do_text"];
             }

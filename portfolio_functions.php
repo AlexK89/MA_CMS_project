@@ -11,7 +11,7 @@ include ("set_connection.php");
 if (isset($_POST["add"])) {
     $label = $_POST["label"];
     $description = $_POST["description"];
-    $img_url = $_POST["img_url"];
+    $img_url = $_FILES["file_To_Upload"]["name"];;
     $project_url = $_POST["project_url"];
 
     if ($label && $description && $img_url && $project_url) {
@@ -23,7 +23,7 @@ if (isset($_POST["add"])) {
 if (isset($_POST["update"])) {
     $label = $_POST["label"];
     $description = $_POST["description"];
-    $img_url = $_POST["img_url"];
+    $img_url = $_FILES["file_To_Upload"]["name"];
     $project_url = $_POST["project_url"];
 
     if ($label || $description || $img_url || $project_url) {

@@ -44,9 +44,23 @@
             </p>
         </header>
         <body>
-        <?php
-        put_items();
-        ?>
+            <?php
+                $data = get_about_page_items();
+                $block_structure= "";
+
+                foreach ($data as $item) {
+                    $label = $item["i_can_do_label"];
+                    $description = $item["i_can_do_text"];
+                    $icon = $item["i_can_do_icon_url"];
+
+                    $block_structure .=  "<div class=\"satisfaction_type\">";
+                    $block_structure .= "<p><img src=\"./img/" . $icon . "\"></p>";
+                    $block_structure .= "<h4>" . $label . "</h4>";
+                    $block_structure .= "<p>" . $description . "</p>";
+                    $block_structure .= "</div>";
+                }
+                echo $block_structure;
+            ?>
         </body>
     </div>
 </section>

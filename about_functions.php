@@ -67,6 +67,7 @@ function get_about_page_items()
 function get_about_page_items_list()
 {
     $data = get_about_page_items();
+    var_dump($data);
     foreach ($data as $item) {
         $content = $item["i_can_do_label"];
         echo "<option value='$content'> $content </option>";
@@ -133,4 +134,24 @@ function delete_item() {
     $query = $db->prepare("DELETE FROM `about_page_items` WHERE `i_can_do_label` = \"" . $remove_content_name . "\";");
     $query->execute();
     return "Your item deleted";
+}
+
+//======================================
+//PUT data into portfolio page
+//======================================
+
+function put_items()
+{
+    $data = get_about_page_items();
+    foreach ($data as $item) {
+        $label = $item["i_can_do_label"];
+        $description = $item["i_can_do_text"];
+        $icon = $item["i_can_do_icon_url"];
+
+        echo "<div class=\"satisfaction_type\">";
+            echo "<p><img src=\"./img/" . $icon . "\"></p>";
+            echo "<h4>" . $label . "</h4>";
+            echo "<p>" . $description . "</p>";
+        echo "</div>";
+    }
 }

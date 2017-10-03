@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89afb501-f69e-4317-ba7f-accfb1eaeeb7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/home_functions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/home_page.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/upload.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portfolio_page.php" afterPath="$PROJECT_DIR$/portfolio_page.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/about_functions.php" afterPath="$PROJECT_DIR$/about_functions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/about_page.php" afterPath="$PROJECT_DIR$/about_page.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,11 +24,31 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="home_page.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/home_page.php">
+          <file leaf-file-name="about_page.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/about_page.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="299">
-                  <caret line="13" column="43" lean-forward="true" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+                <state relative-caret-position="472">
+                  <caret line="30" column="25" lean-forward="false" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="upload.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/upload.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="276">
+                  <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="about_test.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Portfolio_project-2.0/about_test.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="781">
+                  <caret line="47" column="20" lean-forward="false" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
                   <folding />
                 </state>
               </provider>
@@ -38,20 +58,20 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="home_functions.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/home_functions.php">
+          <file leaf-file-name="about_functions.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/about_functions.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="207">
-                  <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+                <state relative-caret-position="929">
+                  <caret line="155" column="5" lean-forward="true" selection-start-line="155" selection-start-column="5" selection-end-line="155" selection-end-column="5" />
                   <folding>
-                    <marker date="1507043194254" expanded="true" signature="927:984" ph="SELECT `labe... home_page" />
-                    <marker date="1507043194254" expanded="true" signature="1351:1449" ph="INSERT INTO `home_page`... " />
-                    <marker date="1507043194254" expanded="true" signature="1761:1842" ph="UPDATE `home... " />
-                    <marker date="1507043194254" expanded="true" signature="2007:2094" ph="UPDATE `home... " />
-                    <marker date="1507043194254" expanded="true" signature="2257:2340" ph="UPDATE `home... " />
-                    <marker date="1507043194254" expanded="true" signature="2579:2645" ph="SELECT `id` home_page" />
-                    <marker date="1507043194254" expanded="true" signature="3221:3293" ph="DELETE FROM " />
-                    <marker date="1507043194254" expanded="true" signature="3252:3293" ph="DELETE FROM " />
+                    <marker date="1507045584264" expanded="true" signature="1233:1271" ph="SELECT `abou... about_block" />
+                    <marker date="1507045584264" expanded="true" signature="1809:1894" ph="SELECT `i_ca... about_page_items" />
+                    <marker date="1507045584264" expanded="true" signature="2324:2471" ph="INSERT INTO `about_page_items`... " />
+                    <marker date="1507045584264" expanded="true" signature="2852:2958" ph="UPDATE `abou... " />
+                    <marker date="1507045584264" expanded="true" signature="3145:3250" ph="UPDATE `abou... " />
+                    <marker date="1507045584264" expanded="true" signature="3444:3553" ph="UPDATE `abou... " />
+                    <marker date="1507045584264" expanded="true" signature="3831:3922" ph="SELECT `id` about_page_items" />
+                    <marker date="1507045584264" expanded="true" signature="4598:4686" ph="DELETE FROM " />
                   </folding>
                 </state>
               </provider>
@@ -80,12 +100,14 @@
         <option value="$PROJECT_DIR$/test.php" />
         <option value="$PROJECT_DIR$/functions.php" />
         <option value="$PROJECT_DIR$/content_form.php" />
-        <option value="$PROJECT_DIR$/about_page.php" />
         <option value="$PROJECT_DIR$/portfolio_functions.php" />
-        <option value="$PROJECT_DIR$/about_functions.php" />
         <option value="$PROJECT_DIR$/portfolio_page.php" />
         <option value="$PROJECT_DIR$/home_page.php" />
         <option value="$PROJECT_DIR$/home_functions.php" />
+        <option value="$PROJECT_DIR$/Portfolio_project-2.0/about_test.php" />
+        <option value="$PROJECT_DIR$/about_functions.php" />
+        <option value="$PROJECT_DIR$/about_page.php" />
+        <option value="$PROJECT_DIR$/upload.php" />
       </list>
     </option>
   </component>
@@ -124,6 +146,11 @@
               <item name="cms_project" type="b2602c69:ProjectViewProjectNode" />
               <item name="cms_project" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="cms_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cms_project" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Portfolio_project-2.0" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -158,12 +185,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1506935845995</updated>
-      <workItem from="1506935847245" duration="36184000" />
+      <workItem from="1506935847245" duration="38841000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36184000" />
+    <option name="totallyTimeSpent" value="38841000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1680" y="0" width="1920" height="1200" extended-state="0" />
@@ -242,31 +269,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/about_page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="28" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="83" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/about_functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="92" column="15" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
-          <folding>
-            <marker date="1507040987620" expanded="true" signature="1233:1271" ph="SELECT `abou... about_block" />
-            <marker date="1507040987620" expanded="true" signature="1809:1894" ph="SELECT `i_ca... about_page_items" />
-            <marker date="1507040987620" expanded="true" signature="2303:2450" ph="INSERT INTO `about_page_items`... " />
-            <marker date="1507040987620" expanded="true" signature="2831:2937" ph="UPDATE `abou... " />
-            <marker date="1507040987620" expanded="true" signature="3124:3229" ph="UPDATE `abou... " />
-            <marker date="1507040987620" expanded="true" signature="3423:3532" ph="UPDATE `abou... " />
-            <marker date="1507040987620" expanded="true" signature="3810:3901" ph="SELECT `id` about_page_items" />
-            <marker date="1507040987620" expanded="true" signature="4577:4665" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/portfolio_page.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
@@ -311,8 +313,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/home_page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="43" lean-forward="true" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+        <state relative-caret-position="345">
+          <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Portfolio_project-2.0/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="24" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="150" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Portfolio_project-2.0/about_test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="781">
+          <caret line="47" column="20" lean-forward="false" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/about_functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="929">
+          <caret line="155" column="5" lean-forward="true" selection-start-line="155" selection-start-column="5" selection-end-line="155" selection-end-column="5" />
+          <folding>
+            <marker date="1507045584264" expanded="true" signature="1233:1271" ph="SELECT `abou... about_block" />
+            <marker date="1507045584264" expanded="true" signature="1809:1894" ph="SELECT `i_ca... about_page_items" />
+            <marker date="1507045584264" expanded="true" signature="2324:2471" ph="INSERT INTO `about_page_items`... " />
+            <marker date="1507045584264" expanded="true" signature="2852:2958" ph="UPDATE `abou... " />
+            <marker date="1507045584264" expanded="true" signature="3145:3250" ph="UPDATE `abou... " />
+            <marker date="1507045584264" expanded="true" signature="3444:3553" ph="UPDATE `abou... " />
+            <marker date="1507045584264" expanded="true" signature="3831:3922" ph="SELECT `id` about_page_items" />
+            <marker date="1507045584264" expanded="true" signature="4598:4686" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/about_page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="30" column="25" lean-forward="false" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
           <folding />
         </state>
       </provider>

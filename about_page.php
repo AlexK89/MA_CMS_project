@@ -18,7 +18,7 @@
     <input type="submit" name="update_about" id="update_about" value="UPDATE">
 </form>
 <h3>ADD/Modify content form</h3>
-<form action="content_form.php" method="POST">
+<form action="about_page.php" method="POST">
     <div class="form_block">
         <select name="select_options" id="select_options">
             <option value="add">Add</option>
@@ -28,7 +28,7 @@
         </select>
     </div>
     <div class="form_block">
-        <input type="text" name="i_can_do_icon_url" id="i_can_do_icon_url" placeholder="Icon url">
+        <input type="file" name="i_can_do_icon_url" id="i_can_do_icon_url" placeholder="Icon url">
     </div>
     <div class="form_block">
         <input type="text" name="i_can_do_label" id="i_can_do_label" placeholder="I can do label">

@@ -7,84 +7,119 @@
  */
 
 include ("set_connection.php");
-
+if(isset($_POST["update_about"])) {
+    $about_welcome_text = $_POST["about_welcome_text"];
+    update_about_data($about_welcome_text);
+}
 if (isset($_POST["add"])) {
-    $content_name = $_POST["content_name"];
-    $text_content = $_POST["text_content"];
+    $i_can_do_label = $_POST["i_can_do_label"];
+    $i_can_do_text = $_POST["i_can_do_text"];
+    $i_can_do_icon_url = $_POST["i_can_do_icon_url"];
 
-    if ($content_name && $text_content) {
-        echo add_content($content_name, $text_content);
+    if ($i_can_do_label && $i_can_do_text && $i_can_do_icon_url) {
+        echo add_content($i_can_do_label, $i_can_do_text, $i_can_do_icon_url);
     } else {
         echo "<p>Fill inputs</p>";
     }
 }
-if (isset($_POST["edit"])) {
-    $edit_content_name = $_POST["edit_content_name"];
-    $edit_text_content = $_POST["edit_text_content"];
+if (isset($_POST["update"])) {
+    $i_can_do_icon_url = $_POST["i_can_do_icon_url"];
+    $i_can_do_label = $_POST["i_can_do_label"];
+    $i_can_do_text = $_POST["i_can_do_text"];
 
-    if ($edit_content_name || $edit_text_content) {
-        echo edit_form($edit_content_name, $edit_text_content);
+    if ($i_can_do_icon_url || $i_can_do_label || $i_can_do_text) {
+        echo edit_form($i_can_do_icon_url, $i_can_do_label, $i_can_do_text);
     } else {
         echo "Fill the form please";
     }
 }
-if (isset($_POST["delete_item"])) {
+if (isset($_POST["delete"])) {
     echo delete_item();
 }
 
-
-function add_content($content_name, $text_content) {
+function get_about_data()
+{
     $db = connection();
-    $query = $db->prepare("INSERT INTO `test` (`content_name`, `text_content`) VALUE (:content_name, :text_content);");
-    $query->bindParam(":content_name", $content_name);
-    $query->bindParam(":text_content", $text_content);
+    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+    $query = $db->prepare("SELECT `about_text` FROM `about_block`;");
+    $query->execute();
+    $about_data_result = $query->fetchAll();
+    return $about_data_result[0]["about_text"];
+}
+function update_about_data($about_welcome_text)
+{
+    $query = $db->prepare("REPLACE INTO `about_block`(`about_text`) VALUES (:our_param)");
+    $query->bindParam(":our_param", $about_welcome_text);
+    $query->execute();
+}
+function get_about_page_items()
+{
+    $db = connection();
+    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+    $query = $db->prepare("SELECT `i_can_do_label`, `i_can_do_text`, `i_can_do_icon_url` FROM `about_page_items`;");
+    $query->execute();
+    return $query->fetchAll();
+}
+
+function get_about_page_items_list()
+{
+    $data = get_about_page_items();
+    foreach ($data as $item) {
+        $content = $item["i_can_do_label"];
+        echo "<option value='$content'> $content </option>";
+    }
+}
+
+function add_content($i_can_do_label, $i_can_do_text, $i_can_do_icon_url) {
+    $db = connection();
+    $query = $db->prepare("INSERT INTO `about_page_items` (`i_can_do_label`, `i_can_do_text`, `i_can_do_icon_url`) VALUE (:i_can_do_label, :i_can_do_text, :i_can_do_icon_url);");
+    $query->bindParam(":i_can_do_label", $i_can_do_label);
+    $query->bindParam(":i_can_do_text", $i_can_do_text);
+    $query->bindParam(":i_can_do_icon_url", $i_can_do_icon_url);
     $query->execute();
     $result = "<p>Your data was added</p>";
     return $result;
 }
 
-function get_data()
+function update_i_can_do_label($db, $db_i_can_do_label_id, $i_can_do_label)
+{
+    $query = $db->prepare("UPDATE `about_page_items` SET `i_can_do_label` = :our_param WHERE `id` = \"" . $db_i_can_do_label_id . "\";");
+    $query->bindParam(":our_param", $i_can_do_label);
+    $query->execute();
+}
+function update_i_can_do_text($db, $db_i_can_do_label_id, $i_can_do_text)
+{
+    $query = $db->prepare("UPDATE `about_page_items` SET `i_can_do_text` = :our_param WHERE `id` = \"" . $db_i_can_do_label_id . "\";");
+    $query->bindParam(":our_param", $i_can_do_text);
+    $query->execute();
+}
+function update_i_can_do_icon_url($db, $db_i_can_do_label_id, $i_can_do_icon_url)
+{
+    $query = $db->prepare("UPDATE `about_page_items` SET `i_can_do_icon_url` = :our_param WHERE `id` = \"" . $db_i_can_do_label_id . "\";");
+    $query->bindParam(":our_param", $i_can_do_icon_url);
+    $query->execute();
+}
+function edit_form($i_can_do_icon_url, $i_can_do_label, $i_can_do_text)
 {
     $db = connection();
-    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    $db_i_can_do_label = stripslashes($_POST['select_options']);
 
-    $query = $db->prepare("SELECT * FROM `test`;");
+    $query = $db->prepare("SELECT `id` FROM `about_page_items` WHERE `i_can_do_label` = \"" . $db_i_can_do_label . "\";");
     $query->execute();
-    return $query->fetchAll();
-}
+    $query_result = $query->fetch(PDO::FETCH_ASSOC);
 
-function get_data_list()
-{
-    $data = get_data();
-    foreach ($data as $item) {
-        $content = $item["content_name"];
-        echo "<option value='$content'> $content </option>";
+    $db_i_can_do_label_id = $query_result["id"];
+
+    if ($i_can_do_label) {
+        update_i_can_do_label($db, $db_i_can_do_label_id, $i_can_do_label);
     }
-}
-function update_name($db, $edit_content_name, $content_name)
-{
-    $query = $db->prepare("UPDATE `test` SET `content_name` = \"" . $edit_content_name. "\" WHERE `content_name` = \"" . $content_name . "\";");
-    $query->bindParam(":content_name", $content_name);
-    $query->execute();
-}
-function update_text_content($db, $edit_text_content, $content_name)
-{
-    $query = $db->prepare("UPDATE `test` SET `text_content` = \"" . $edit_text_content. "\" WHERE `content_name` = \"" . $content_name . "\";");
-    $query->bindParam(":edit_text_content", $edit_text_content);
-    $query->execute();
-}
-function edit_form($edit_content_name, $edit_text_content)
-{
-    $db = connection();
-    $content_name = stripslashes($_POST['users']);
-
-    if ($edit_content_name ) {
-        update_name($db, $edit_content_name, $content_name);
-        if ($edit_text_content) {
-            update_text_content($db, $edit_text_content, $content_name);
-        }
-    } else {
-        update_text_content($db, $edit_text_content, $content_name);
+    if ($i_can_do_text) {
+        update_i_can_do_text($db, $db_i_can_do_label_id, $i_can_do_text);
+    }
+    if ($i_can_do_icon_url) {
+        update_i_can_do_icon_url($db, $db_i_can_do_label_id, $i_can_do_icon_url);
     }
     $result = "<p>Your data was added</p>";
     return $result;
@@ -92,8 +127,9 @@ function edit_form($edit_content_name, $edit_text_content)
 
 function delete_item() {
     $db = connection();
-    $remove_content_name = stripslashes($_POST['remove_item']);
-    $query = $db->prepare("DELETE FROM `test` WHERE `content_name` = \"" . $remove_content_name . "\";");
+    $remove_content_name = stripslashes($_POST['select_options']);
+    var_dump($remove_content_name);
+    $query = $db->prepare("DELETE FROM `about_page_items` WHERE `i_can_do_label` = \"" . $remove_content_name . "\";");
     $query->execute();
     return "Your item deleted";
 }

@@ -49,7 +49,8 @@ function get_about_data()
 }
 function update_about_data($about_welcome_text)
 {
-    $query = $db->prepare("REPLACE INTO `about_block`(`about_text`) VALUES (:our_param)");
+    $db = connection();
+    $query = $db->prepare("REPLACE INTO `about_block`(`id`, `about_text`) VALUES (1, :our_param);");
     $query->bindParam(":our_param", $about_welcome_text);
     $query->execute();
 }
@@ -128,7 +129,7 @@ function edit_form($i_can_do_icon_url, $i_can_do_label, $i_can_do_text)
 function delete_item() {
     $db = connection();
     $remove_content_name = stripslashes($_POST['select_options']);
-    var_dump($remove_content_name);
+
     $query = $db->prepare("DELETE FROM `about_page_items` WHERE `i_can_do_label` = \"" . $remove_content_name . "\";");
     $query->execute();
     return "Your item deleted";

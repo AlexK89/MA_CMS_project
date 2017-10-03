@@ -1,4 +1,4 @@
-<?php include ("functions.php"); ?>
+<?php include ("about_functions.php"); ?>
 
 <!doctype html>
 <html lang="en">
@@ -11,13 +11,9 @@
 </head>
 <body>
 <h3>About section</h3>
-<form action="content_form.php" method="POST">
+<form action="about_page.php" method="POST">
     <div class="form_block">
-        <textarea name="about_welcome_text" id="about_welcome_text" cols="30" rows="10" placeholder="About me">
-            <?php
-                echo get_about_data();
-            ?>
-        </textarea>
+        <textarea name="about_welcome_text" id="about_welcome_text" cols="30" rows="10" placeholder="About me"><?php echo get_about_data();?></textarea>
     </div>
     <input type="submit" name="update_about" id="update_about" value="UPDATE">
 </form>
@@ -27,7 +23,7 @@
         <select name="select_options" id="select_options">
             <option value="add">Add</option>
             <?php
-                get_about_page_items_list();
+            get_about_page_items_list();
             ?>
         </select>
     </div>

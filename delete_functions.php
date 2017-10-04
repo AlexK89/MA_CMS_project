@@ -11,6 +11,5 @@ function delete_item($table_name) {
     $remove_content_name = stripslashes($_POST['select_options']);
 
     $query = $db->prepare("DELETE FROM `" . $table_name . "` WHERE `label` = \"" . $remove_content_name . "\";");
-    $query->execute();
-    return "Your item deleted";
+    return $query->execute();
 }

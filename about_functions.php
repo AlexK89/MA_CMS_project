@@ -54,7 +54,10 @@ if (isset($_POST["delete"])) {
         header("Location: about_page.php");
     }
 }
-
+/*
+ * get_about_data()  -   getting about section data from data base;
+ * return array -   associative array from database;
+ */
 function get_about_data()
 {
     $db = connection();
@@ -73,6 +76,11 @@ function update_about_data($about_welcome_text)
     $query->execute();
     return $query->execute();
 }
+
+/*
+ * get_items()  -   getting requested data from data base;
+ * return array -   associative array from database;
+ */
 function get_items()
 {
     $db = connection();
@@ -83,10 +91,13 @@ function get_items()
     return $query->fetchAll();
 }
 
+/*
+ * get_items_list()     -   getting from array of data labels for each item;
+ * return string        -   label for element;
+ */
 function get_items_list()
 {
     $data = get_items();
-    var_dump($data);
     foreach ($data as $item) {
         $content = $item["label"];
         echo "<option value='$content'> $content </option>";

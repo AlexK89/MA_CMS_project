@@ -22,11 +22,12 @@ if (isset($_POST["add"])) {
 
     if ($label && $description && $img_url) {
         if(add_content($label, $description, $img_url, $project_url, $table_name)) {
-            header("Location: home_page.php");
+            header("Location: home_page.php?success=Data added");
+            exit();
         }
     } else {
-        header("Location: home_page.php");
-        echo "<p>Fill inputs</p>";
+        header("Location: home_page.php?error=Fill inputs");
+        exit();
     }
 }
 if (isset($_POST["update"])) {
@@ -34,20 +35,27 @@ if (isset($_POST["update"])) {
     $description = $_POST["description"];
     $img_url = $_FILES["file_To_Upload"]["name"];
 
-    if ($label || $description || $img_url) {
+    if ($label && $description) {
         if(edit_form($label, $description, $img_url, $project_url, $table_name)) {
-            header("Location: home_page.php");
+            header("Location: home_page.php?success=Data updated");
+            exit();
         }
     } else {
-        echo "Fill the form please";
+        header("Location: home_page.php?error=Fill the form please");
+        exit();
     }
 }
 if (isset($_POST["delete"])) {
     if(delete_item($table_name)) {
         header("Location: home_page.php");
+        exit();
     }
 }
 
+/*
+ * get_items()  -   getting requested data from data base;
+ * return array -   associative array from database;
+ */
 function get_items()
 {
     $db = connection();
@@ -58,6 +66,10 @@ function get_items()
     return $query->fetchAll();
 }
 
+/*
+ * get_items_list()     -   getting from array of data labels for each item;
+ * return string        -   label for element;
+ */
 function get_items_list()
 {
     $data = get_items();

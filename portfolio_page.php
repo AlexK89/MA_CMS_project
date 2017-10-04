@@ -21,7 +21,7 @@
         <select name="select_options" id="select_options">
             <option value="add">Add</option>
             <?php
-            get_portfolio_items_list();
+            get_items_list();
             ?>
         </select>
     </div>
@@ -45,7 +45,7 @@
 </form>
 
 <script>
-    var get_data = <?php echo json_encode(get_portfolio_items()); ?>;
+    var get_data = <?php echo json_encode(get_items()); ?>;
 
     function disable_update_button(item)
     {

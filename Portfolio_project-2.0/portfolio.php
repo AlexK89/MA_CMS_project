@@ -33,7 +33,7 @@
     <div class="container">
 
         <?php
-        $data = get_portfolio_items();
+        $data = get_items();
         $block_structure= "";
         $counter = 1;
 

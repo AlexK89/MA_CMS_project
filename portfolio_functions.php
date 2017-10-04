@@ -47,7 +47,11 @@ if (isset($_POST["delete"])) {
     echo delete_item($table_name);
 }
 
-function get_portfolio_items()
+/*
+ * get_items()  -   getting requested data from data base;
+ * return array -   associative array from database;
+ */
+function get_items()
 {
     $db = connection();
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -57,9 +61,13 @@ function get_portfolio_items()
     return $query->fetchAll();
 }
 
-function get_portfolio_items_list()
+/*
+ * get_items_list()     -   getting from array of data labels for each item;
+ * return string        -   label for element;
+ */
+function get_items_list()
 {
-    $data = get_portfolio_items();
+    $data = get_items();
     foreach ($data as $item) {
         $content = $item["label"];
         echo "<option value='$content'> $content </option>";

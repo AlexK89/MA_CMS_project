@@ -16,6 +16,6 @@ function add_content($label, $description, $img_url, $project_url, $table_name) 
     $query->bindParam(":label", $label);
     $query->bindParam(":description", $description);
     $query->bindParam(":img_url", $img_url);
-    $query->execute();
+
     return $query->execute();
 }

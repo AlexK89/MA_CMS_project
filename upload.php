@@ -17,6 +17,7 @@ if(isset($_POST["add"]) || isset($_POST["update"])) {
         if($check === false) {
             header("Location: home_page.php?error=File is not an image.");
             $uploadOk = 0;
+            exit();
         }
     }
 }

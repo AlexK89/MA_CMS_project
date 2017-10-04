@@ -47,7 +47,7 @@ if (isset($_POST["update"])) {
 }
 if (isset($_POST["delete"])) {
     if(delete_item($table_name)) {
-        header("Location: home_page.php");
+        header("Location: home_page.php?success=Data removed");
         exit();
     }
 }

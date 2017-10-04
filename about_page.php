@@ -47,6 +47,15 @@
         <input type="submit" name="delete" value="DELETE">
     </div>
 </form>
+<h4 class="error">
+    <?php
+    if ($_GET["error"]) {
+        echo $_GET["error"];
+    } else if ($_GET["success"]) {
+        echo $_GET["success"];
+    }
+    ?>
+</h4>
 <script>
     var get_data = <?php echo json_encode(get_items()); ?>;
 

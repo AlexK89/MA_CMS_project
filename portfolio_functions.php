@@ -22,11 +22,12 @@ if (isset($_POST["add"])) {
 
     if ($label && $description && $img_url && $project_url) {
         if(add_content($label, $description, $img_url, $project_url, $table_name)) {
-            header("Location: portfolio_page.php");
-            die();
+            header("Location: portfolio_page.php?success=Data added");
+            exit();
         }
     } else {
-        echo "<p>Fill inputs</p>";
+        header("Location: portfolio_page.php?error=Fill inputs");
+        exit();
     }
 }
 if (isset($_POST["update"])) {
@@ -37,14 +38,19 @@ if (isset($_POST["update"])) {
 
     if ($label || $description || $img_url || $project_url) {
         if(edit_form($label, $description, $img_url, $project_url, $table_name)) {
-            header("Location: portfolio_page.php");
+            header("Location: portfolio_page.php?success=Data updated");
+            exit();
         }
     } else {
-        echo "Fill the form please";
+        header("Location: portfolio_page.php?error=Fill the form please");
+        exit();
     }
 }
 if (isset($_POST["delete"])) {
-    echo delete_item($table_name);
+    if(delete_item($table_name)) {
+        header("Location: portfolio_page.php?success=Data removed");
+        exit();
+    }
 }
 
 /*

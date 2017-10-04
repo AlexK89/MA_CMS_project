@@ -30,10 +30,12 @@ if (isset($_POST["add"])) {
 
     if ($label && $description && $img_url) {
         if(add_content($label, $description, $img_url, $project_url, $table_name)) {
-            header("Location: about_page.php");
+            header("Location: about_page.php?success=Data added");
+            exit();
         }
     } else {
-        echo "<p>Fill inputs</p>";
+        header("Location: about_page.php?error=Fill inputs");
+        exit();
     }
 
 }
@@ -43,20 +45,24 @@ if (isset($_POST["update"])) {
     $img_url = $_FILES["file_To_Upload"]["name"];
     if ($img_url || $label || $description) {
         if(edit_form($label, $description, $img_url, $project_url, $table_name)) {
-            header("Location: about_page.php");
+            header("Location: about_page.php?success=Data updated");
+            exit();
         }
     } else {
-        echo "Fill the form please";
+        header("Location: about_page.php?error=Fill the form please");
+        exit();
     }
 }
 if (isset($_POST["delete"])) {
     if(delete_item($table_name)) {
-        header("Location: about_page.php");
+        header("Location: about_page.php?success=Data removed");
+        exit();
     }
 }
+
 /*
  * get_about_data()  -   getting about section data from data base;
- * return array -   associative array from database;
+ * return string     -   content which is in about section;
  */
 function get_about_data()
 {
@@ -68,12 +74,16 @@ function get_about_data()
     $about_data_result = $query->fetchAll();
     return $about_data_result[0]["about_text"];
 }
+
+/*
+ * update_about_data()  -   updating content in about section;
+ * return string        -   query request to database;
+ */
 function update_about_data($about_welcome_text)
 {
     $db = connection();
     $query = $db->prepare("REPLACE INTO `about_block`(`id`, `about_text`) VALUES (1, :our_param);");
     $query->bindParam(":our_param", $about_welcome_text);
-    $query->execute();
     return $query->execute();
 }
 

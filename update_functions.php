@@ -54,5 +54,5 @@ function edit_form($label, $description, $img_url, $project_url, $table_name)
         update_project_url($db, $db_label_id, $project_url, $table_name);
     }
 
-    return "Data changed";
+    return true;
 }

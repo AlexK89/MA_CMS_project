@@ -51,6 +51,7 @@
 </h4>
 <script>
     var get_data = <?php echo json_encode(get_items()); ?>;
+
     function disable_update_button(item)
     {
         if (item === "add") {

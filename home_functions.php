@@ -6,15 +6,19 @@
  * Time: 10:25
  */
 
+include("upload.php");
 include ("set_connection.php");
 
 if (isset($_POST["add"])) {
     $label = $_POST["label"];
     $description = $_POST["description"];
-    $img_url = $_POST["img_url"];
+    $img_url = $_FILES["file_To_Upload"]["name"];
 
     if ($label && $description && $img_url) {
-        echo add_content($label, $description, $img_url);
+        if(add_content($label, $description, $img_url)) {
+            header("Location: home_page.php");
+            die();
+        }
     } else {
         echo "<p>Fill inputs</p>";
     }
@@ -22,10 +26,13 @@ if (isset($_POST["add"])) {
 if (isset($_POST["update"])) {
     $label = $_POST["label"];
     $description = $_POST["description"];
-    $img_url = $_POST["img_url"];
+    $img_url = $_FILES["file_To_Upload"]["name"];
 
     if ($label || $description || $img_url) {
-        echo edit_form($label, $description, $img_url);
+        if(edit_form($label, $description, $img_url)) {
+            header("Location: home_page.php");
+            die();
+        }
     } else {
         echo "Fill the form please";
     }

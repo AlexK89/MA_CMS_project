@@ -17,7 +17,7 @@
         <ul id="menu">
             <li><a href="index.html">Home</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="portfolio.php">Portfolio</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </div>
@@ -40,7 +40,7 @@
         <header>
             <h2>I can help you with</h2>
             <p>
-                I can help you with various types of engineering stuff, which can be usefull for your business
+                I can help you with various types of engineering stuff, which can be useful for your business
             </p>
         </header>
         <body>

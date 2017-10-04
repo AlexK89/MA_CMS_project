@@ -1,5 +1,5 @@
 <?php include ("portfolio_functions.php"); ?>
-<?php include("upload.php"); ?>
+
 <!doctype html>
 <html lang="en">
 <head>

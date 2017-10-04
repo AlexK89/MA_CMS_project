@@ -1,3 +1,14 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: alexandrk
+ * Date: 04/10/2017
+ * Time: 10:17
+ */
+
+include ("../home_functions.php");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,37 +49,32 @@
 	</section>
 	<section class="principles">
 		<div class="container">
-			<div class="principles_row">
-				<div class="principles_row_block">
-					<div class="principles_row_img inline_block">
-						<img src="./img/perfection.jpg" alt="perfection">
-					</div>
-				</div>
-				<div class="principles_row_description inline_block">
-					<h4>Thing #1</h4>
-					<h2>Targeting on perfection</h2>
-					<p>
-						some ipsum text, some ipsum text, some ipsum text, some ipsum text, some ipsum text, some ipsum text, some ipsum text, some ipsum text, some ipsum text, some ipsum text, some ipsum text, some ipsum text
-					</p>
-				</div>
-				
-			</div>
-			<div class="principles_row">
-				<div class="principles_row_block">
-					<div class="principles_row_img inline_block">
-						<img src="./img/perfection.jpg" alt="perfection">
-					</div>
-				</div>
-				<div class="principles_row_description">
-					<h4>Thing #2</h4>
-					<h2>Deadlines metters</h2>
-					<p>
-						some ipsum text, some ipsum text, some ipsum text, some ipsum text, some ipsum text, some ipsum text, some ipsum text, some ipsum text, some ipsum text, some ipsum text, some ipsum text, some ipsum text
-					</p>
-				</div>
-				
-			</div>
-		</div>
+
+            <?php
+            $data = get_home_items();
+            $block_structure= "";
+            $counter = 1;
+            foreach ($data as $item) {
+                $label = $item["label"];
+                $description = $item["description"];
+                $img = $item["img_url"];
+
+                $block_structure .=  "<div class=\"principles_row\">";
+                $block_structure .= "<div class=\"principles_row_block\">";
+                $block_structure .= "<div class=\"principles_row_img inline_block\">";
+                $block_structure .= "<img src=\"./img/" . $img . "\" alt=\"" . $img . "\">";
+                $block_structure .= "</div></div>";
+                $block_structure .= "<div class=\"principles_row_description inline_block\">";
+                $block_structure .= "<h4>Thing #" . $counter . "</h4>";
+                $block_structure .= "<h2>" . $label . "</h2>";
+                $block_structure .= "<p>" . $description . "</p>";
+                $block_structure .= "</div></div";
+
+                $counter++;
+            }
+            echo $block_structure;
+            ?>
+        </div>
 	</section>
 	<section class="statistics">
 		<div class="statistics_background"></div>
@@ -97,7 +103,7 @@
 			<header>
 				<h2>Setisfaction of my clients meaning a lot to me</h2>
 				<p>
-					Cooperating with me, you defenately get ...
+Cooperating with me, you defenately get ...
 				</p>
 			</header>
 			<div class="body">
@@ -127,47 +133,47 @@
 	<footer>
 		<p>&copy; Copyright by Vasile Cojusco.</p>
 	</footer>
-	
-	
+
+
 	<script src="./js/jquery-3.2.1.min.js" charset="utf-8"></script>
 	<script type="text/javascript" defer>
 		var hide = function(event) {
-				document.getElementById("menu").style.top = "-455px";
-				document.getElementsByClassName("toggle_ancher")[0].style.color = "#fff"; 
-		};
+    document.getElementById("menu").style.top = "-455px";
+    document.getElementsByClassName("toggle_ancher")[0].style.color = "#fff";
+};
 	    function toggle_menu(event) {
-			event.stopPropagation();
-			if(document.getElementById("menu").style.top == "0px") {
-				document.getElementById("menu").style.top = "-455px";
-				document.getElementsByClassName("toggle_ancher")[0].style.color = "#fff";
-			} 
-			else {
-				document.addEventListener('touchend', hide, false);
-				document.addEventListener('click', hide, false);
-				document.getElementById("menu").style.top = "0";
-				document.getElementsByClassName("toggle_ancher")[0].style.color = "#919294";
-			}
-	    }
+            event.stopPropagation();
+            if(document.getElementById("menu").style.top == "0px") {
+                document.getElementById("menu").style.top = "-455px";
+                document.getElementsByClassName("toggle_ancher")[0].style.color = "#fff";
+            }
+            else {
+                document.addEventListener('touchend', hide, false);
+                document.addEventListener('click', hide, false);
+                document.getElementById("menu").style.top = "0";
+                document.getElementsByClassName("toggle_ancher")[0].style.color = "#919294";
+            }
+        }
 		$('#smooth_scroll[href^="#"]').on('click',function (e) {
-		    e.preventDefault();
-    	
-		    var target = this.hash;
-		    var $target = $(target);
-    	
-		    $('html, body').stop().animate({
+            e.preventDefault();
+
+            var target = this.hash;
+            var $target = $(target);
+
+            $('html, body').stop().animate({
 		        'scrollTop': $target.offset().top
 		    }, 900, 'swing', function () {
-		        window.location.hash = target;
-		    });
+                window.location.hash = target;
+            });
 		});
 		$(window).scroll(function(e){
-		  parallax();
-		});
+            parallax();
+        });
 		function parallax(){
-		  var scrolled = $(window).scrollTop();
-		  $('.header_background').css('top',-(scrolled*0.15)+'px');
-		  $('.statistics_background').css('top',-(scrolled*0.1)+'px');
-		}
+            var scrolled = $(window).scrollTop();
+            $('.header_background').css('top',-(scrolled*0.15)+'px');
+            $('.statistics_background').css('top',-(scrolled*0.15)+'px');
+        }
 	</script>
 </body>
 </html>

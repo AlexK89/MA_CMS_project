@@ -6,6 +6,7 @@
  * Time: 10:25
  */
 
+include("upload.php");
 include ("set_connection.php");
 
 if (isset($_POST["add"])) {
@@ -15,7 +16,10 @@ if (isset($_POST["add"])) {
     $project_url = $_POST["project_url"];
 
     if ($label && $description && $img_url && $project_url) {
-        echo add_content($label, $description, $img_url, $project_url);
+        if(add_content($label, $description, $img_url, $project_url)) {
+            header("Location: portfolio_page.php");
+            die();
+        }
     } else {
         echo "<p>Fill inputs</p>";
     }
@@ -27,7 +31,10 @@ if (isset($_POST["update"])) {
     $project_url = $_POST["project_url"];
 
     if ($label || $description || $img_url || $project_url) {
-        echo edit_form($label, $description, $img_url, $project_url);
+        if(edit_form($label, $description, $img_url, $project_url)) {
+            header("Location: portfolio_page.php");
+            die();
+        }
     } else {
         echo "Fill the form please";
     }

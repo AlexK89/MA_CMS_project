@@ -5,11 +5,16 @@
  * Date: 02/10/2017
  * Time: 10:25
  */
-
+include ("upload.php");
 include ("set_connection.php");
+
 if(isset($_POST["update_about"])) {
     $about_welcome_text = $_POST["about_welcome_text"];
-    update_about_data($about_welcome_text);
+
+    if(update_about_data($about_welcome_text)) {
+        header("Location: about_page.php");
+        die();
+    }
 }
 if (isset($_POST["add"])) {
     $i_can_do_label = $_POST["i_can_do_label"];
@@ -17,17 +22,24 @@ if (isset($_POST["add"])) {
     $i_can_do_icon_url = $_FILES["file_To_Upload"]["name"];
 
     if ($i_can_do_label && $i_can_do_text && $i_can_do_icon_url) {
-        echo add_content($i_can_do_label, $i_can_do_text, $i_can_do_icon_url);
+        if(add_content($i_can_do_label, $i_can_do_text, $i_can_do_icon_url)) {
+            header("Location: about_page.php");
+            die();
+        }
     } else {
         echo "<p>Fill inputs</p>";
     }
+
 }
 if (isset($_POST["update"])) {
     $i_can_do_label = $_POST["i_can_do_label"];
     $i_can_do_text = $_POST["i_can_do_text"];
     $i_can_do_icon_url = $_FILES["file_To_Upload"]["name"];
     if ($i_can_do_icon_url || $i_can_do_label || $i_can_do_text) {
-        echo edit_form($i_can_do_icon_url, $i_can_do_label, $i_can_do_text);
+        if(edit_form($i_can_do_icon_url, $i_can_do_label, $i_can_do_text)) {
+            header("Location: about_page.php");
+            die();
+        }
     } else {
         echo "Fill the form please";
     }
@@ -35,6 +47,8 @@ if (isset($_POST["update"])) {
 if (isset($_POST["delete"])) {
     echo delete_item();
 }
+
+
 
 function get_about_data()
 {
@@ -52,6 +66,7 @@ function update_about_data($about_welcome_text)
     $query = $db->prepare("REPLACE INTO `about_block`(`id`, `about_text`) VALUES (1, :our_param);");
     $query->bindParam(":our_param", $about_welcome_text);
     $query->execute();
+    return $query->execute();
 }
 function get_about_page_items()
 {
@@ -79,9 +94,8 @@ function add_content($i_can_do_label, $i_can_do_text, $i_can_do_icon_url) {
     $query->bindParam(":i_can_do_label", $i_can_do_label);
     $query->bindParam(":i_can_do_text", $i_can_do_text);
     $query->bindParam(":i_can_do_icon_url", $i_can_do_icon_url);
-    $query->execute();
-    $result = "<p>Your data was added</p>";
-    return $result;
+
+    return $query->execute();
 }
 
 function update_i_can_do_label($db, $db_i_can_do_label_id, $i_can_do_label)

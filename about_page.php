@@ -1,5 +1,4 @@
 <?php include ("about_functions.php"); ?>
-<?php include ("upload.php"); ?>
 
 <!doctype html>
 <html lang="en">
@@ -19,7 +18,7 @@
     <input type="submit" name="update_about" id="update_about" value="UPDATE">
 </form>
 <h3>ADD/Modify content form</h3>
-<form action="about_page.php" method="POST" enctype="multipart/form-data">
+<form action="about_functions.php" method="POST" enctype="multipart/form-data">
     <div class="form_block">
         <select name="select_options" id="select_options">
             <option value="add">Add</option>

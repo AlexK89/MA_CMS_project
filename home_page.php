@@ -11,7 +11,7 @@
 </head>
 <body>
 <h3>ADD/Modify content form</h3>
-<form action="home_page.php" method="POST">
+<form action="home_functions.php" method="POST" enctype="multipart/form-data">
     <div class="form_block">
         <select name="select_options" id="select_options">
             <option value="add">Add</option>
@@ -27,7 +27,7 @@
         <textarea type="text" name="description" cols="60" rows="20" id="description" placeholder="Description"></textarea>
     </div>
     <div class="form_block">
-        <input type="text" name="img_url" id="img_url" placeholder="Image url">
+        <input type="file" name="file_To_Upload" id="fileToUpload">
     </div>
     <div class="form_block">
         <input type="submit" name="add" id="add" value="ADD">
@@ -43,7 +43,6 @@
         if (item === "add") {
             document.getElementById("label").value = "";
             document.getElementById("description").value = "";
-            document.getElementById("img_url").value = "";
             document.getElementById('update').disabled = true;
             document.getElementById('add').disabled = false;
         } else {
@@ -65,7 +64,6 @@
             if(element["label"] === item) {
                 document.getElementById("label").value = element["label"];
                 document.getElementById("description").value = element["description"];
-                document.getElementById("img_url").value = element["img_url"];
             }
         });
     }

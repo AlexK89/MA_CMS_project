@@ -10,6 +10,7 @@ include ("upload.php");
 include ("set_connection.php");
 include ("add_content_function.php");
 include ("update_functions.php");
+include ("delete_functions.php");
 
 $table_name = stripslashes("home_page");
 $project_url = "";
@@ -41,7 +42,7 @@ if (isset($_POST["update"])) {
     }
 }
 if (isset($_POST["delete"])) {
-    if(delete_item()) {
+    if(delete_item($table_name)) {
         header("Location: home_page.php");
     }
 }
@@ -63,12 +64,4 @@ function get_items_list()
         $content = $item["label"];
         echo "<option value='$content'> $content </option>";
     }
-}
-
-function delete_item() {
-    $db = connection();
-    $remove_content_name = stripslashes($_POST['select_options']);
-    $query = $db->prepare("DELETE FROM `home_page` WHERE `label` = \"" . $remove_content_name . "\";");
-    $query->execute();
-    return "Your item deleted";
 }

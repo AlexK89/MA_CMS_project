@@ -48,7 +48,7 @@ if (isset($_POST["update"])) {
     }
 }
 if (isset($_POST["delete"])) {
-    if(delete_item()) {
+    if(delete_item($table_name)) {
         header("Location: about_page.php");
     }
 }
@@ -89,13 +89,4 @@ function get_items_list()
         $content = $item["label"];
         echo "<option value='$content'> $content </option>";
     }
-}
-
-function delete_item() {
-    $db = connection();
-    $remove_content_name = stripslashes($_POST['select_options']);
-
-    $query = $db->prepare("DELETE FROM `about_page_items` WHERE `label` = \"" . $remove_content_name . "\";");
-    $query->execute();
-    return "Your item deleted";
 }

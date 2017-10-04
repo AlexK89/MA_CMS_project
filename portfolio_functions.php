@@ -10,6 +10,7 @@ include ("upload.php");
 include ("set_connection.php");
 include ("add_content_function.php");
 include ("update_functions.php");
+include ("delete_functions.php");
 
 $table_name = stripslashes("portfolio_page");
 
@@ -43,7 +44,7 @@ if (isset($_POST["update"])) {
     }
 }
 if (isset($_POST["delete"])) {
-    echo delete_item();
+    echo delete_item($table_name);
 }
 
 function get_portfolio_items()
@@ -63,12 +64,4 @@ function get_portfolio_items_list()
         $content = $item["label"];
         echo "<option value='$content'> $content </option>";
     }
-}
-
-function delete_item() {
-    $db = connection();
-    $remove_content_name = stripslashes($_POST['select_options']);
-    $query = $db->prepare("DELETE FROM `portfolio_page` WHERE `label` = \"" . $remove_content_name . "\";");
-    $query->execute();
-    return "Your item deleted";
 }

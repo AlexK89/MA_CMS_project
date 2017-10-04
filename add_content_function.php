@@ -6,7 +6,7 @@
  * Time: 12:27
  */
 
-function add_content($label, $description, $img_url, $table_name, $project_url) {
+function add_content($label, $description, $img_url, $project_url, $table_name) {
     $db = connection();
     $query = $db->prepare("INSERT INTO `" . $table_name . "` (`label`, `description`, `img_url`) VALUE (:label, :description, :img_url);");
     if ($project_url) {

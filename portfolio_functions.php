@@ -6,9 +6,10 @@
  * Time: 10:25
  */
 
-include("upload.php");
+include ("upload.php");
 include ("set_connection.php");
-include("add_content_function.php");
+include ("add_content_function.php");
+include ("update_functions.php");
 
 $table_name = stripslashes("portfolio_page");
 
@@ -19,7 +20,7 @@ if (isset($_POST["add"])) {
     $project_url = $_POST["project_url"];
 
     if ($label && $description && $img_url && $project_url) {
-        if(add_content($label, $description, $img_url, $table_name, $project_url)) {
+        if(add_content($label, $description, $img_url, $project_url, $table_name)) {
             header("Location: portfolio_page.php");
             die();
         }
@@ -34,9 +35,8 @@ if (isset($_POST["update"])) {
     $project_url = $_POST["project_url"];
 
     if ($label || $description || $img_url || $project_url) {
-        if(edit_form($label, $description, $img_url, $project_url)) {
+        if(edit_form($label, $description, $img_url, $project_url, $table_name)) {
             header("Location: portfolio_page.php");
-            die();
         }
     } else {
         echo "Fill the form please";
@@ -63,57 +63,6 @@ function get_portfolio_items_list()
         $content = $item["label"];
         echo "<option value='$content'> $content </option>";
     }
-}
-
-function update_label($db, $db_label_id, $label)
-{
-    $query = $db->prepare("UPDATE `portfolio_page` SET `label` = :our_param WHERE `id` = \"" . $db_label_id . "\";");
-    $query->bindParam(":our_param", $label);
-    $query->execute();
-}
-function update_description($db, $db_label_id, $description)
-{
-    $query = $db->prepare("UPDATE `portfolio_page` SET `description` = :our_param WHERE `id` = \"" . $db_label_id . "\";");
-    $query->bindParam(":our_param", $description);
-    $query->execute();
-}
-function update_img_url($db, $db_label_id, $img_url)
-{
-    $query = $db->prepare("UPDATE `portfolio_page` SET `img_url` = :our_param WHERE `id` = \"" . $db_label_id . "\";");
-    $query->bindParam(":our_param", $img_url);
-    $query->execute();
-}
-function update_project_url($db, $db_label_id, $project_url)
-{
-    $query = $db->prepare("UPDATE `portfolio_page` SET `project_url` = :our_param WHERE `id` = \"" . $db_label_id . "\";");
-    $query->bindParam(":our_param", $project_url);
-    $query->execute();
-}
-function edit_form($label, $description, $img_url, $project_url)
-{
-    $db = connection();
-    $db_label = stripslashes($_POST['select_options']);
-
-    $query = $db->prepare("SELECT `id` FROM `portfolio_page` WHERE `label` = \"" . $db_label . "\";");
-    $query->execute();
-    $query_result = $query->fetch(PDO::FETCH_ASSOC);
-
-    $db_label_id = $query_result["id"];
-
-    if ($label) {
-        update_label($db, $db_label_id, $label);
-    }
-    if ($description) {
-        update_description($db, $db_label_id, $description);
-    }
-    if ($img_url) {
-        update_img_url($db, $db_label_id, $img_url);
-    }
-    if ($project_url) {
-        update_project_url($db, $db_label_id, $project_url);
-    }
-    $result = "<p>Your data was added</p>";
-    return $result;
 }
 
 function delete_item() {

@@ -7,6 +7,11 @@
  */
 include ("upload.php");
 include ("set_connection.php");
+include("add_content_function.php");
+include ("update_functions.php");
+
+$table_name = stripslashes("about_page_items");
+$project_url = "";
 
 if(isset($_POST["update_about"])) {
     $about_welcome_text = $_POST["about_welcome_text"];
@@ -22,7 +27,7 @@ if (isset($_POST["add"])) {
     $img_url = $_FILES["file_To_Upload"]["name"];
 
     if ($label && $description && $img_url) {
-        if(add_content($label, $description, $img_url)) {
+        if(add_content($label, $description, $img_url, $project_url, $table_name)) {
             header("Location: about_page.php");
         }
     } else {
@@ -35,7 +40,7 @@ if (isset($_POST["update"])) {
     $description = $_POST["description"];
     $img_url = $_FILES["file_To_Upload"]["name"];
     if ($img_url || $label || $description) {
-        if(edit_form($img_url, $label, $description)) {
+        if(edit_form($label, $description, $img_url, $project_url, $table_name)) {
             header("Location: about_page.php");
         }
     } else {
@@ -47,8 +52,6 @@ if (isset($_POST["delete"])) {
         header("Location: about_page.php");
     }
 }
-
-
 
 function get_about_data()
 {
@@ -68,7 +71,7 @@ function update_about_data($about_welcome_text)
     $query->execute();
     return $query->execute();
 }
-function get_about_page_items()
+function get_items()
 {
     $db = connection();
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -78,66 +81,14 @@ function get_about_page_items()
     return $query->fetchAll();
 }
 
-function get_about_page_items_list()
+function get_items_list()
 {
-    $data = get_about_page_items();
+    $data = get_items();
     var_dump($data);
     foreach ($data as $item) {
         $content = $item["label"];
         echo "<option value='$content'> $content </option>";
     }
-}
-
-function add_content($label, $description, $img_url) {
-    $db = connection();
-    $query = $db->prepare("INSERT INTO `about_page_items` (`label`, `description`, `img_url`) VALUE (:label, :description, :img_url);");
-    $query->bindParam(":label", $label);
-    $query->bindParam(":description", $description);
-    $query->bindParam(":img_url", $img_url);
-
-    return $query->execute();
-}
-
-function update_label($db, $db_label_id, $label)
-{
-    $query = $db->prepare("UPDATE `about_page_items` SET `label` = :our_param WHERE `id` = \"" . $db_label_id . "\";");
-    $query->bindParam(":our_param", $label);
-    $query->execute();
-}
-function update_description($db, $db_label_id, $description)
-{
-    $query = $db->prepare("UPDATE `about_page_items` SET `description` = :our_param WHERE `id` = \"" . $db_label_id . "\";");
-    $query->bindParam(":our_param", $description);
-    $query->execute();
-}
-function update_img_url($db, $db_label_id, $img_url)
-{
-    $query = $db->prepare("UPDATE `about_page_items` SET `img_url` = :our_param WHERE `id` = \"" . $db_label_id . "\";");
-    $query->bindParam(":our_param", $img_url);
-    $query->execute();
-}
-function edit_form($img_url, $label, $description)
-{
-    $db = connection();
-    $db_label = stripslashes($_POST['select_options']);
-
-    $query = $db->prepare("SELECT `id` FROM `about_page_items` WHERE `label` = \"" . $db_label . "\";");
-    $query->execute();
-    $query_result = $query->fetch(PDO::FETCH_ASSOC);
-
-    $db_label_id = $query_result["id"];
-
-    if ($label) {
-        update_label($db, $db_label_id, $label);
-    }
-    if ($description) {
-        update_description($db, $db_label_id, $description);
-    }
-    if ($img_url) {
-        update_img_url($db, $db_label_id, $img_url);
-    }
-    $result = "<p>Your data was added</p>";
-    return $result;
 }
 
 function delete_item() {

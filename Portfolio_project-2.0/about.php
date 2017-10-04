@@ -45,7 +45,7 @@
         </header>
         <body>
             <?php
-                $data = get_about_page_items();
+                $data = get_items();
                 $block_structure= "";
 
                 foreach ($data as $item) {

@@ -8,7 +8,7 @@
 
 include ("upload.php");
 include ("set_connection.php");
-include ("add_content_function.php");
+include ("add_functions.php");
 include ("update_functions.php");
 include ("delete_functions.php");
 

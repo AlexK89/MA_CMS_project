@@ -8,12 +8,13 @@
 
 include ("upload.php");
 include ("set_connection.php");
-include ("add_content_function.php");
+include ("add_functions.php");
 include ("update_functions.php");
 include ("delete_functions.php");
 
 $table_name = stripslashes("home_page");
 $project_url = "";
+
 if (isset($_POST["add"])) {
     $label = $_POST["label"];
     $description = $_POST["description"];

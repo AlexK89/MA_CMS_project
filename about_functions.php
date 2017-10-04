@@ -5,10 +5,12 @@
  * Date: 02/10/2017
  * Time: 10:25
  */
+
 include ("upload.php");
 include ("set_connection.php");
-include("add_content_function.php");
+include ("add_functions.php");
 include ("update_functions.php");
+include ("delete_functions.php");
 
 $table_name = stripslashes("about_page_items");
 $project_url = "";

@@ -15,7 +15,7 @@
     <div class="container hover">
         <div class="toggle"><a class="toggle_ancher" onclick="toggle_menu(event)"><i class="fa fa-bars fa-3x" aria-hidden="true"></i></a></div>
         <ul id="menu">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="portfolio.php">Portfolio</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -49,12 +49,12 @@
                 $block_structure= "";
 
                 foreach ($data as $item) {
-                    $label = $item["i_can_do_label"];
-                    $description = $item["i_can_do_text"];
-                    $icon = $item["i_can_do_icon_url"];
+                    $label = $item["label"];
+                    $description = $item["description"];
+                    $img_url = $item["img_url"];
 
                     $block_structure .=  "<div class=\"satisfaction_type\">";
-                    $block_structure .= "<p><img src=\"./img/" . $icon . "\"></p>";
+                    $block_structure .= "<p><img src=\"./img/" . $img_url . "\"></p>";
                     $block_structure .= "<h4>" . $label . "</h4>";
                     $block_structure .= "<p>" . $description . "</p>";
                     $block_structure .= "</div>";

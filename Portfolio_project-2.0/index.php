@@ -25,8 +25,8 @@ include ("../home_functions.php");
 			<div class="toggle"><a class="toggle_ancher" onclick="toggle_menu(event)"><i class="fa fa-bars fa-3x" aria-hidden="true"></i></a></div>
 			<ul id="menu">
 				<li><a href="#">Home</a></li>
-				<li><a href="about.html">About</a></li>
-				<li><a href="portfolio.html">Portfolio</a></li>
+				<li><a href="about.php">About</a></li>
+				<li><a href="portfolio.php">Portfolio</a></li>
 				<li><a href="contact.html">Contact</a></li>
 			</ul>
 		</div>
@@ -51,24 +51,24 @@ include ("../home_functions.php");
 		<div class="container">
 
             <?php
-            $data = get_home_items();
+            $data = get_items($table_name);
             $block_structure= "";
             $counter = 1;
             foreach ($data as $item) {
                 $label = $item["label"];
                 $description = $item["description"];
-                $img = $item["img_url"];
+                $img_url = $item["img_url"];
 
                 $block_structure .=  "<div class=\"principles_row\">";
                 $block_structure .= "<div class=\"principles_row_block\">";
                 $block_structure .= "<div class=\"principles_row_img inline_block\">";
-                $block_structure .= "<img src=\"./img/" . $img . "\" alt=\"" . $img . "\">";
+                $block_structure .= "<img src=\"./img/" . $img_url . "\" alt=\"" . $img_url . "\">";
                 $block_structure .= "</div></div>";
                 $block_structure .= "<div class=\"principles_row_description inline_block\">";
                 $block_structure .= "<h4>Thing #" . $counter . "</h4>";
                 $block_structure .= "<h2>" . $label . "</h2>";
                 $block_structure .= "<p>" . $description . "</p>";
-                $block_structure .= "</div></div";
+                $block_structure .= "</div></div>";
 
                 $counter++;
             }

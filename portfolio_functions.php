@@ -8,6 +8,9 @@
 
 include("upload.php");
 include ("set_connection.php");
+include("add_content_function.php");
+
+$table_name = stripslashes("portfolio_page");
 
 if (isset($_POST["add"])) {
     $label = $_POST["label"];
@@ -16,7 +19,7 @@ if (isset($_POST["add"])) {
     $project_url = $_POST["project_url"];
 
     if ($label && $description && $img_url && $project_url) {
-        if(add_content($label, $description, $img_url, $project_url)) {
+        if(add_content($label, $description, $img_url, $table_name, $project_url)) {
             header("Location: portfolio_page.php");
             die();
         }
@@ -60,18 +63,6 @@ function get_portfolio_items_list()
         $content = $item["label"];
         echo "<option value='$content'> $content </option>";
     }
-}
-
-function add_content($label, $description, $img_url, $project_url) {
-    $db = connection();
-    $query = $db->prepare("INSERT INTO `portfolio_page` (`label`, `description`, `img_url`, `project_url`) VALUE (:label, :description, :img_url, :project_url);");
-    $query->bindParam(":label", $label);
-    $query->bindParam(":description", $description);
-    $query->bindParam(":img_url", $img_url);
-    $query->bindParam(":project_url", $project_url);
-    $query->execute();
-    $result = "<p>Your data was added</p>";
-    return $result;
 }
 
 function update_label($db, $db_label_id, $label)

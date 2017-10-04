@@ -10,13 +10,18 @@
     <title>Home page || CMS</title>
 </head>
 <body>
+<ul>
+    <li><a href="home_page.php">Home page</a></li>
+    <li><a href="about_page.php">About page</a></li>
+    <li><a href="portfolio_page.php">Portfolio page</a></li>
+</ul>
 <h3>ADD/Modify content form</h3>
 <form action="home_functions.php" method="POST" enctype="multipart/form-data">
     <div class="form_block">
         <select name="select_options" id="select_options">
             <option value="add">Add</option>
             <?php
-            get_home_items_list();
+            get_items_list();
             ?>
         </select>
     </div>
@@ -37,7 +42,7 @@
 </form>
 
 <script>
-    var get_data = <?php echo json_encode(get_home_items()); ?>;
+    var get_data = <?php echo json_encode(get_items()); ?>;
     function disable_update_button(item)
     {
         if (item === "add") {

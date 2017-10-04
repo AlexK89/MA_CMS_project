@@ -15,7 +15,7 @@
     <div class="container hover">
         <div class="toggle"><a class="toggle_ancher" onclick="toggle_menu(event)"><i class="fa fa-bars fa-3x" aria-hidden="true"></i></a></div>
         <ul id="menu">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="about.php">About</a></li>
             <li><a href="#">Portfolio</a></li>
             <li><a href="contact.html">Contact</a></li>

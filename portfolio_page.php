@@ -10,6 +10,11 @@
     <title>Portfolio page || CMS</title>
 </head>
 <body>
+<ul>
+    <li><a href="home_page.php">Home page</a></li>
+    <li><a href="about_page.php">About page</a></li>
+    <li><a href="portfolio_page.php">Portfolio page</a></li>
+</ul>
 <h3>ADD/Modify content form</h3>
 <form action="portfolio_page.php" method="POST" enctype="multipart/form-data">
     <div class="form_block">

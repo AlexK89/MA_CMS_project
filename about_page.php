@@ -10,6 +10,11 @@
     <title>About page || CMS</title>
 </head>
 <body>
+<ul>
+    <li><a href="home_page.php">Home page</a></li>
+    <li><a href="about_page.php">About page</a></li>
+    <li><a href="portfolio_page.php">Portfolio page</a></li>
+</ul>
 <h3>About section</h3>
 <form action="about_page.php" method="POST">
     <div class="form_block">
@@ -31,10 +36,10 @@
         <input type="file" name="file_To_Upload" id="fileToUpload">
     </div>
     <div class="form_block">
-        <input type="text" name="i_can_do_label" id="i_can_do_label" placeholder="I can do label">
+        <input type="text" name="label" id="label" placeholder="I can do label">
     </div>
     <div class="form_block">
-        <textarea name="i_can_do_text" id="i_can_do_text" cols="30" rows="10" placeholder="I can do"></textarea>
+        <textarea name="description" id="description" cols="30" rows="10" placeholder="I can do"></textarea>
     </div>
     <div class="form_block">
         <input type="submit" name="add" id="add" value="ADD">
@@ -48,8 +53,8 @@
     function disable_update_button(item)
     {
         if (item === "add") {
-            document.getElementById("i_can_do_label").value = "";
-            document.getElementById("i_can_do_text").value = "";
+            document.getElementById("label").value = "";
+            document.getElementById("description").value = "";
             document.getElementById('update').disabled = true;
             document.getElementById('add').disabled = false;
         } else {
@@ -68,9 +73,9 @@
         disable_update_button(item);
         get_data.forEach(function(element)
         {
-            if(element["i_can_do_label"] === item) {
-                document.getElementById("i_can_do_label").value = element["i_can_do_label"];
-                document.getElementById("i_can_do_text").value = element["i_can_do_text"];
+            if(element["label"] === item) {
+                document.getElementById("label").value = element["label"];
+                document.getElementById("description").value = element["description"];
             }
         });
     }

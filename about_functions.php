@@ -17,14 +17,13 @@ if(isset($_POST["update_about"])) {
     }
 }
 if (isset($_POST["add"])) {
-    $i_can_do_label = $_POST["i_can_do_label"];
-    $i_can_do_text = $_POST["i_can_do_text"];
-    $i_can_do_icon_url = $_FILES["file_To_Upload"]["name"];
+    $label = $_POST["label"];
+    $description = $_POST["description"];
+    $img_url = $_FILES["file_To_Upload"]["name"];
 
-    if ($i_can_do_label && $i_can_do_text && $i_can_do_icon_url) {
-        if(add_content($i_can_do_label, $i_can_do_text, $i_can_do_icon_url)) {
+    if ($label && $description && $img_url) {
+        if(add_content($label, $description, $img_url)) {
             header("Location: about_page.php");
-            die();
         }
     } else {
         echo "<p>Fill inputs</p>";
@@ -32,20 +31,21 @@ if (isset($_POST["add"])) {
 
 }
 if (isset($_POST["update"])) {
-    $i_can_do_label = $_POST["i_can_do_label"];
-    $i_can_do_text = $_POST["i_can_do_text"];
-    $i_can_do_icon_url = $_FILES["file_To_Upload"]["name"];
-    if ($i_can_do_icon_url || $i_can_do_label || $i_can_do_text) {
-        if(edit_form($i_can_do_icon_url, $i_can_do_label, $i_can_do_text)) {
+    $label = $_POST["label"];
+    $description = $_POST["description"];
+    $img_url = $_FILES["file_To_Upload"]["name"];
+    if ($img_url || $label || $description) {
+        if(edit_form($img_url, $label, $description)) {
             header("Location: about_page.php");
-            die();
         }
     } else {
         echo "Fill the form please";
     }
 }
 if (isset($_POST["delete"])) {
-    echo delete_item();
+    if(delete_item()) {
+        header("Location: about_page.php");
+    }
 }
 
 
@@ -73,7 +73,7 @@ function get_about_page_items()
     $db = connection();
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-    $query = $db->prepare("SELECT `i_can_do_label`, `i_can_do_text`, `i_can_do_icon_url` FROM `about_page_items`;");
+    $query = $db->prepare("SELECT `label`, `description`, `img_url` FROM `about_page_items`;");
     $query->execute();
     return $query->fetchAll();
 }
@@ -83,58 +83,58 @@ function get_about_page_items_list()
     $data = get_about_page_items();
     var_dump($data);
     foreach ($data as $item) {
-        $content = $item["i_can_do_label"];
+        $content = $item["label"];
         echo "<option value='$content'> $content </option>";
     }
 }
 
-function add_content($i_can_do_label, $i_can_do_text, $i_can_do_icon_url) {
+function add_content($label, $description, $img_url) {
     $db = connection();
-    $query = $db->prepare("INSERT INTO `about_page_items` (`i_can_do_label`, `i_can_do_text`, `i_can_do_icon_url`) VALUE (:i_can_do_label, :i_can_do_text, :i_can_do_icon_url);");
-    $query->bindParam(":i_can_do_label", $i_can_do_label);
-    $query->bindParam(":i_can_do_text", $i_can_do_text);
-    $query->bindParam(":i_can_do_icon_url", $i_can_do_icon_url);
+    $query = $db->prepare("INSERT INTO `about_page_items` (`label`, `description`, `img_url`) VALUE (:label, :description, :img_url);");
+    $query->bindParam(":label", $label);
+    $query->bindParam(":description", $description);
+    $query->bindParam(":img_url", $img_url);
 
     return $query->execute();
 }
 
-function update_i_can_do_label($db, $db_i_can_do_label_id, $i_can_do_label)
+function update_label($db, $db_label_id, $label)
 {
-    $query = $db->prepare("UPDATE `about_page_items` SET `i_can_do_label` = :our_param WHERE `id` = \"" . $db_i_can_do_label_id . "\";");
-    $query->bindParam(":our_param", $i_can_do_label);
+    $query = $db->prepare("UPDATE `about_page_items` SET `label` = :our_param WHERE `id` = \"" . $db_label_id . "\";");
+    $query->bindParam(":our_param", $label);
     $query->execute();
 }
-function update_i_can_do_text($db, $db_i_can_do_label_id, $i_can_do_text)
+function update_description($db, $db_label_id, $description)
 {
-    $query = $db->prepare("UPDATE `about_page_items` SET `i_can_do_text` = :our_param WHERE `id` = \"" . $db_i_can_do_label_id . "\";");
-    $query->bindParam(":our_param", $i_can_do_text);
+    $query = $db->prepare("UPDATE `about_page_items` SET `description` = :our_param WHERE `id` = \"" . $db_label_id . "\";");
+    $query->bindParam(":our_param", $description);
     $query->execute();
 }
-function update_i_can_do_icon_url($db, $db_i_can_do_label_id, $i_can_do_icon_url)
+function update_img_url($db, $db_label_id, $img_url)
 {
-    $query = $db->prepare("UPDATE `about_page_items` SET `i_can_do_icon_url` = :our_param WHERE `id` = \"" . $db_i_can_do_label_id . "\";");
-    $query->bindParam(":our_param", $i_can_do_icon_url);
+    $query = $db->prepare("UPDATE `about_page_items` SET `img_url` = :our_param WHERE `id` = \"" . $db_label_id . "\";");
+    $query->bindParam(":our_param", $img_url);
     $query->execute();
 }
-function edit_form($i_can_do_icon_url, $i_can_do_label, $i_can_do_text)
+function edit_form($img_url, $label, $description)
 {
     $db = connection();
-    $db_i_can_do_label = stripslashes($_POST['select_options']);
+    $db_label = stripslashes($_POST['select_options']);
 
-    $query = $db->prepare("SELECT `id` FROM `about_page_items` WHERE `i_can_do_label` = \"" . $db_i_can_do_label . "\";");
+    $query = $db->prepare("SELECT `id` FROM `about_page_items` WHERE `label` = \"" . $db_label . "\";");
     $query->execute();
     $query_result = $query->fetch(PDO::FETCH_ASSOC);
 
-    $db_i_can_do_label_id = $query_result["id"];
+    $db_label_id = $query_result["id"];
 
-    if ($i_can_do_label) {
-        update_i_can_do_label($db, $db_i_can_do_label_id, $i_can_do_label);
+    if ($label) {
+        update_label($db, $db_label_id, $label);
     }
-    if ($i_can_do_text) {
-        update_i_can_do_text($db, $db_i_can_do_label_id, $i_can_do_text);
+    if ($description) {
+        update_description($db, $db_label_id, $description);
     }
-    if ($i_can_do_icon_url) {
-        update_i_can_do_icon_url($db, $db_i_can_do_label_id, $i_can_do_icon_url);
+    if ($img_url) {
+        update_img_url($db, $db_label_id, $img_url);
     }
     $result = "<p>Your data was added</p>";
     return $result;
@@ -144,7 +144,7 @@ function delete_item() {
     $db = connection();
     $remove_content_name = stripslashes($_POST['select_options']);
 
-    $query = $db->prepare("DELETE FROM `about_page_items` WHERE `i_can_do_label` = \"" . $remove_content_name . "\";");
+    $query = $db->prepare("DELETE FROM `about_page_items` WHERE `label` = \"" . $remove_content_name . "\";");
     $query->execute();
     return "Your item deleted";
 }

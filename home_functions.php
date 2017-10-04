@@ -8,18 +8,21 @@
 
 include("upload.php");
 include ("set_connection.php");
+include("add_content_function.php");
 
+$table_name = stripslashes("home_page");
+$project_url = "";
 if (isset($_POST["add"])) {
     $label = $_POST["label"];
     $description = $_POST["description"];
     $img_url = $_FILES["file_To_Upload"]["name"];
 
     if ($label && $description && $img_url) {
-        if(add_content($label, $description, $img_url)) {
+        if(add_content($label, $description, $img_url, $table_name, $project_url)) {
             header("Location: home_page.php");
-            die();
         }
     } else {
+        header("Location: home_page.php");
         echo "<p>Fill inputs</p>";
     }
 }
@@ -31,43 +34,34 @@ if (isset($_POST["update"])) {
     if ($label || $description || $img_url) {
         if(edit_form($label, $description, $img_url)) {
             header("Location: home_page.php");
-            die();
         }
     } else {
         echo "Fill the form please";
     }
 }
 if (isset($_POST["delete"])) {
-    echo delete_item();
+    if(delete_item()) {
+        header("Location: home_page.php");
+    }
 }
 
-function get_home_items()
+function get_items()
 {
     $db = connection();
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    
     $query = $db->prepare("SELECT `label`, `description`, `img_url` FROM `home_page`;");
     $query->execute();
     return $query->fetchAll();
 }
 
-function get_home_items_list()
+function get_items_list()
 {
-    $data = get_home_items();
+    $data = get_items();
     foreach ($data as $item) {
         $content = $item["label"];
         echo "<option value='$content'> $content </option>";
     }
-}
-
-function add_content($label, $description, $img_url) {
-    $db = connection();
-    $query = $db->prepare("INSERT INTO `home_page` (`label`, `description`, `img_url`) VALUE (:label, :description, :img_url);");
-    $query->bindParam(":label", $label);
-    $query->bindParam(":description", $description);
-    $query->bindParam(":img_url", $img_url);
-    $query->execute();
-    $result = "<p>Your data was added</p>";
-    return $result;
 }
 
 function update_label($db, $db_label_id, $label)

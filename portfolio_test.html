@@ -1,3 +1,11 @@
+<?php
+    include ("./php_functions/portfolio_functions.php");
+    include ("./php_functions/login_functions.php");
+    if (!check_data($our_user, $our_user_pass)) {
+        header("Location: log_in.php");
+        exit;
+    }
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,7 +18,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/header_aside.css">
     <link rel="stylesheet" href="css/home_page.css">
-    <title>HOME Page || Main page</title>
+    <title>Portfolio Page || CMS</title>
 </head>
 <body>
 <header class="page_header">
@@ -30,26 +38,30 @@
 </header>
 <aside class="sidebar">
     <nav class= "navigation_bar">
-        <ul>
-            <li><a href="home_page.php">Home page</a></li>
-            <li><a href="about_page.php">About page</a></li>
-            <li><a href="portfolio_page.php">Portfolio page</a></li>
+        <ul class="tab_list">
+            <li class="tab"><a href="home_page.php">Home page</a></li>
+            <li class="tab"><a href="about_page.php">About page</a></li>
+            <li class="selected_tab"><a href="portfolio_page.php">Portfolio page</a></li>
         </ul>
     </nav>
 </aside>
 <div class="content">
     <div class="container">
         <h3 class="form_label">ADD/Modify content form</h3>
-        <form action="php_functions/home_functions.php" method="POST" enctype="multipart/form-data" class="main_form">
+        <form action="php_functions/portfolio_functions.php" method="POST" enctype="multipart/form-data" class="main_form">
             <div class="form_block">
                 <select name="select_options" id="select_options" class="input_area select_block">
                     <option value="add">Add / Select</option>
-                    <option value="add">Add</option>
-                    <option value="add">Add</option>
+                    <?php
+                get_items_list();
+            ?>
                 </select>
             </div>
             <div class="form_block">
                 <input type="text" name="label" id="label" placeholder="Label" class="input_area label">
+            </div>
+            <div class="form_block">
+                <input type="text" name="project_url" id="project_url" placeholder="Project url" class="input_area label">
             </div>
             <div class="form_block">
                 <textarea type="text" name="description" rows="15" id="description" placeholder="Description" class="input_area description"></textarea>
@@ -66,29 +78,17 @@
                 <input type="submit" name="delete" value="DELETE" class="delete">
             </div>
             <h4 class="error">
-                error
+                <?php
+        if ($_GET["error"]) {
+            echo $_GET["error"];
+        } else if ($_GET["success"]) {
+            echo $_GET["success"];
+        }
+    ?>
             </h4>
         </form>
-
-
-        <div class="item">
-            <div class="item_content_img" id="item_content_img">
-            </div>
-            <div class="item_content">
-                <div class="item_content_header">
-                    <h4 class="item_content_header_name">Item #1: name</h4>
-                </div>
-                <div class="item_content_body">
-                    <p class="item_content_body_text">Williamsburg tofu listicle, keffiyeh distillery fam prism yuccie XOXO thundercats poutine
-                        shoreditch heirloom hexagon. Chambray thundercats hot chicken beard williamsburg +1 gochujang
-                        green juice vegan pinterest actually. Hot chicken man bun distillery, slow-carb pork belly +1
-                        iPhone trust fund brunch flannel church-key affogato shoreditch wolf actually. Blue bottle vinyl
-                        single-origin coffee, swag helvetica meh poke XOXO bespoke skateboard next level.
-                    </p>
-                    <p class="item_content_body_text"><a href="">sdfsdfsdfsdfsdfsdfsdf</a></p>
-                </div>
-            </div>
-        </div>
+        <script>var get_data = <?php echo json_encode(get_items()); ?>;</script>
+        <script type="text/javascript" src="js/title_listen.js"></script>
     </div>
 </div>
 

@@ -18,7 +18,7 @@ if (!check_data($our_user, $our_user_pass)) {
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/header_aside.css">
     <link rel="stylesheet" href="css/main_page.css">
-    <title>Welcome || Main page</title>
+    <title>Welcome || CMS</title>
 </head>
 <body>
 <header class="page_header">
@@ -48,7 +48,7 @@ if (!check_data($our_user, $our_user_pass)) {
 <div class="content">
     <div class="container">
         <div class="projects_amount">
-            <h2 class="projects_number">50</h2>
+            <h2 class="projects_number">47</h2>
             <h4 class="project_number_label">Total amount of projects</h4>
         </div>
         <section class="technologies">

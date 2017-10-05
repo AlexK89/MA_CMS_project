@@ -18,7 +18,7 @@ if (!check_data($our_user, $our_user_pass)) {
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/header_aside.css">
     <link rel="stylesheet" href="css/home_page.css">
-    <title>HOME Page || Main page</title>
+    <title>HOME Page || CMS</title>
 </head>
 <body>
 <header class="page_header">
@@ -84,6 +84,30 @@ if (!check_data($our_user, $our_user_pass)) {
                 ?>
             </h4>
         </form>
+        <?php
+        $data = get_items();
+        $item_structure= "";
+        $counter = 1;
+
+        foreach ($data as $item) {
+            $label = $item["label"];
+            $description = $item["description"];
+            $img_url = $item["img_url"];
+            $block_structure .= "<div class=\"item\">";
+            $block_structure .=  "<div class=\"item_content_img\">";
+            $block_structure .= "<img src=\"Portfolio_project-2.0/img/" . $img_url . "\" alt=\"" . $img_url . "\">";
+            $block_structure .= "</div>";
+            $block_structure .= "<div class=\"item_content\">";
+            $block_structure .= "<div class=\"item_content_header\">";
+            $block_structure .= "<h4 class=\"item_content_header_name\">";
+            $block_structure .= "Item #" . $counter . ": " . $label . "</h4></div>";
+            $block_structure .= "<div class=\"item_content_body\">";
+            $block_structure .= "<p class=\"item_content_body_text\">" . $description . "</div></div></div>";
+
+            $counter++;
+        }
+        echo $block_structure;
+        ?>
     </div>
 </div>
 <script>var get_data = <?php echo json_encode(get_items()); ?>;</script>

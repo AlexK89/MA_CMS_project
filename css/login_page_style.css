@@ -20,7 +20,7 @@ form {
     margin: 0;
     padding: 20px 10%;
     text-align: left;
-    background-color: #1eaaf1;
+    background-color: #00BC8B;
     color: #fff;
     font-weight:bold;
     letter-spacing: 1px;
@@ -49,16 +49,16 @@ form {
 .data_inputs input {
     height:40px;
     padding: 0 5px;
-    border-bottom: 1px solid #1eaaf1;
+    border-bottom: 1px solid #00BC8B;
     background: none;
     outline: none;
-    color: #1eaaf1;
+    color: #00BC8B;
 }
 .data_inputs input[type="text"]::placeholder {
     color: #919191;
 }
 .submit_button input {
-    background-color: #1eaaf1;
+    background-color: #00BC8B;
     height:50px;
     outline: none;
     color: #fff;

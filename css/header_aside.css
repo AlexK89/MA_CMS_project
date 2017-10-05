@@ -52,12 +52,12 @@ body {
     float: right;
 }
 .log_off {
-    width: 90px;
-    height: 30px;
+    width: 100px;
+    height: 40px;
     padding: 6px;
-    margin-top: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
     background-color: #00BC8B;
-    border-radius: 3px;
     color: #fff;
     font-size: 1.5rem;
     border: none;
@@ -73,14 +73,14 @@ body {
     background-color: #00d59e;
     outline: 0;
 }
-.log_off:active {
-    -ms-transform: scale(0.94, 0.94);
-    /* IE 9 */
-    -webkit-transform: scale(0.94, 0.94);
-    /* Safari */
-    transform: scale(0.94, 0.94);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 2px 2px rgba(0, 0, 0, 0.22);
-}
+/*.log_off:active {*/
+    /*-ms-transform: scale(0.94, 0.94);*/
+    /*!* IE 9 *!*/
+    /*-webkit-transform: scale(0.94, 0.94);*/
+    /*!* Safari *!*/
+    /*transform: scale(0.94, 0.94);*/
+    /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 2px 2px rgba(0, 0, 0, 0.22);*/
+/*}*/
 /*Sidebar navigation*/
 .sidebar {
     position: fixed;

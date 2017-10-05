@@ -24,11 +24,11 @@ if (isset($_POST["add"])) {
 
     if ($label && $description && duplicates_protection($label, $no_duplicates)) {
         if(add_content($label, $description, $img_url, $project_url, $table_name)) {
+            include("upload.php");
             header("Location: ../home_page.php?success=Data added");
             exit();
         }
     } else if(duplicates_protection($label, $no_duplicates) === false) {
-        include("upload.php");
         header("Location: ../home_page.php?error=This section already exist");
         exit();
     } else {

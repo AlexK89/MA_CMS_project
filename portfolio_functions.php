@@ -6,7 +6,8 @@
  * Time: 10:25
  */
 
-include ("upload.php");
+$page_name = stripslashes("portfolio_page");
+
 include ("set_connection.php");
 include ("add_functions.php");
 include ("update_functions.php");
@@ -21,8 +22,9 @@ if (isset($_POST["add"])) {
     $img_url = $_FILES["file_To_Upload"]["name"];;
     $project_url = $_POST["project_url"];
 
-    if ($label && $description && $img_url && $project_url && duplicates_protection($label, $no_duplicates)) {
+    if ($label && $description && $project_url && duplicates_protection($label, $no_duplicates)) {
         if(add_content($label, $description, $img_url, $project_url, $table_name)) {
+            include ("upload.php");
             header("Location: portfolio_page.php?success=Data added");
             exit();
         }
@@ -42,6 +44,7 @@ if (isset($_POST["update"])) {
 
     if ($label || $description || $img_url || $project_url) {
         if(edit_form($label, $description, $img_url, $project_url, $table_name)) {
+            include ("upload.php");
             header("Location: portfolio_page.php?success=Data updated");
             exit();
         }

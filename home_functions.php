@@ -6,7 +6,8 @@
  * Time: 10:25
  */
 
-include ("upload.php");
+$page_name = stripslashes("home_page");
+
 include ("set_connection.php");
 include ("add_functions.php");
 include ("update_functions.php");
@@ -21,12 +22,13 @@ if (isset($_POST["add"])) {
     $description = $_POST["description"];
     $img_url = $_FILES["file_To_Upload"]["name"];
 
-    if ($label && $description && $img_url && duplicates_protection($label, $no_duplicates)) {
+    if ($label && $description && duplicates_protection($label, $no_duplicates)) {
         if(add_content($label, $description, $img_url, $project_url, $table_name)) {
             header("Location: home_page.php?success=Data added");
             exit();
         }
     } else if(duplicates_protection($label, $no_duplicates) === false) {
+        include ("upload.php");
         header("Location: home_page.php?error=This section already exist");
         exit();
     } else {
@@ -41,6 +43,7 @@ if (isset($_POST["update"])) {
 
     if ($label && $description) {
         if(edit_form($label, $description, $img_url, $project_url, $table_name)) {
+            include ("upload.php");
             header("Location: home_page.php?success=Data updated");
             exit();
         }

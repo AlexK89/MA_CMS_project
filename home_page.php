@@ -1,8 +1,8 @@
 <?php
-    include ("home_functions.php");
-    include ("./login_session/function.php");
+    include ("./php_functions/home_functions.php");
+    include ("./php_functions/login_functions.php");
     if (!check_data($our_user, $our_user_pass)) {
-        header("Location: ./login_session/log_in.php");
+        header("Location: log_in.php");
         exit;
     }
 ?>
@@ -22,7 +22,7 @@
     <li><a href="portfolio_page.php">Portfolio page</a></li>
 </ul>
 <h3>ADD/Modify content form</h3>
-<form action="home_functions.php" method="POST" enctype="multipart/form-data">
+<form action="php_functions/home_functions.php" method="POST" enctype="multipart/form-data">
     <div class="form_block">
         <select name="select_options" id="select_options">
             <option value="add">Add</option>
@@ -55,46 +55,13 @@
         }
     ?>
 </h4>
-<form action="./login_session/log_in.php" method="post">
+<form action="log_in.php" method="post">
     <div class="submit_destroy_button">
         <label for="destroy"></label>
         <input type="submit" name="destroy" value="Log out">
     </div>
 </form>
-<script>
-    var get_data = <?php echo json_encode(get_items()); ?>;
-
-    function disable_update_button(item)
-    {
-        if (item === "add") {
-            document.getElementById("label").value = "";
-            document.getElementById("description").value = "";
-            document.getElementById('update').disabled = true;
-            document.getElementById('add').disabled = false;
-        } else {
-            document.getElementById('update').disabled = false;
-            document.getElementById('add').disabled = true;
-        }
-    }
-    function start()
-    {
-        document.getElementById("select_options").addEventListener("change", addActivityItem, false);
-    }
-
-    function addActivityItem()
-    {
-        var item = document.getElementById('select_options').value;
-        disable_update_button(item);
-        get_data.forEach(function(element)
-        {
-            if(element["label"] === item) {
-                document.getElementById("label").value = element["label"];
-                document.getElementById("description").value = element["description"];
-            }
-        });
-    }
-
-    window.addEventListener("load", start, false);
-</script>
+<script>var get_data = <?php echo json_encode(get_items()); ?>;</script>
+<script src="js/title_listen.js"></script>
 </body>
 </html>

@@ -6,7 +6,7 @@
  * Time: 10:17
  */
 
-include ("../home_functions.php");
+include("../php_functions/home_functions.php");
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +45,7 @@ include ("../home_functions.php");
 		<h4>You should know</h4>
 		<h2>Some cool text, which inspire you</h2>
 		<p>some ipsum text, some ipsum text, some ipsum text, some ipsum text</p>
-		<a class="button" href="about.html">Click on me</a>
+		<a class="button" href="about.php">Click on me</a>
 	</section>
 	<section class="principles">
 		<div class="container">
@@ -94,17 +94,15 @@ include ("../home_functions.php");
 			<div class="statistics_right">
 				<p>at least you want to check ...</p>
 				<h1>Projects in details</h1>
-				<a class="button" href="portfolio.html">Let me check</a>
+				<a class="button" href="portfolio.php">Let me check</a>
 			</div>
 		</div>
 	</section>
 	<section class="promissess">
 		<div class="container">
 			<header>
-				<h2>Setisfaction of my clients meaning a lot to me</h2>
-				<p>
-Cooperating with me, you defenately get ...
-				</p>
+				<h2>Satisfaction of my clients meaning a lot to me</h2>
+				<p>Cooperating with me, you definitely get ...</p>
 			</header>
 			<div class="body">
 				<div class="satisfaction_type">
@@ -127,14 +125,12 @@ Cooperating with me, you defenately get ...
 	</section>
 	<section class="call_to_action">
 		<h2>Ready to hire</h2>
-		<p>you will be sattisfied of our cooperation</p>
+		<p>you will be satisfied of our cooperation</p>
 		<p><a class="button" href="contact.html">Hire me</a></p>
 	</section>
 	<footer>
 		<p>&copy; Copyright by Vasile Cojusco.</p>
 	</footer>
-
-
 	<script src="./js/jquery-3.2.1.min.js" charset="utf-8"></script>
 	<script type="text/javascript" defer>
 		var hide = function(event) {

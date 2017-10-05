@@ -1,4 +1,4 @@
-<?php include("../portfolio_functions.php"); ?>
+<?php include("../php_functions/portfolio_functions.php"); ?>
 
 <!DOCTYPE html>
 <html>

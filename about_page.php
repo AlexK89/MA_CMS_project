@@ -1,12 +1,11 @@
 <?php
-include ("about_functions.php");
-include ("./login_session/function.php");
-if (!check_data($our_user, $our_user_pass)) {
-    header("Location: ./login_session/log_in.php");
-    exit;
-}
+    include ("./php_functions/about_functions.php");
+    include ("./php_functions/login_functions.php");
+    if (!check_data($our_user, $our_user_pass)) {
+        header("Location: log_in.php");
+        exit;
+    }
 ?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -23,19 +22,19 @@ if (!check_data($our_user, $our_user_pass)) {
     <li><a href="portfolio_page.php">Portfolio page</a></li>
 </ul>
 <h3>About section</h3>
-<form action="about_page.php" method="POST">
+<form action="./php_functions/about_functions.php" method="POST">
     <div class="form_block">
         <textarea name="about_welcome_text" id="about_welcome_text" cols="30" rows="10" placeholder="About me"><?php echo get_about_data();?></textarea>
     </div>
     <input type="submit" name="update_about" id="update_about" value="UPDATE">
 </form>
 <h3>ADD/Modify content form</h3>
-<form action="about_functions.php" method="POST" enctype="multipart/form-data">
+<form action="./php_functions/about_functions.php" method="POST" enctype="multipart/form-data">
     <div class="form_block">
         <select name="select_options" id="select_options">
             <option value="add">Add</option>
             <?php
-            get_items_list();
+                get_items_list();
             ?>
         </select>
     </div>
@@ -56,53 +55,20 @@ if (!check_data($our_user, $our_user_pass)) {
 </form>
 <h4 class="error">
     <?php
-    if ($_GET["error"]) {
-        echo $_GET["error"];
-    } else if ($_GET["success"]) {
-        echo $_GET["success"];
-    }
+        if ($_GET["error"]) {
+            echo $_GET["error"];
+        } else if ($_GET["success"]) {
+            echo $_GET["success"];
+        }
     ?>
 </h4>
-<form action="./login_session/log_in.php" method="post">
+<form action="log_in.php" method="post">
     <div class="submit_button">
         <label for="destroy"></label>
         <input type="submit" name="destroy" value="Log out">
     </div>
 </form>
-<script>
-    var get_data = <?php echo json_encode(get_items()); ?>;
-
-    function disable_update_button(item)
-    {
-        if (item === "add") {
-            document.getElementById("label").value = "";
-            document.getElementById("description").value = "";
-            document.getElementById('update').disabled = true;
-            document.getElementById('add').disabled = false;
-        } else {
-            document.getElementById('update').disabled = false;
-            document.getElementById('add').disabled = true;
-        }
-    }
-    function start()
-    {
-        document.getElementById("select_options").addEventListener("change", addActivityItem, false);
-    }
-
-    function addActivityItem()
-    {
-        var item = document.getElementById('select_options').value;
-        disable_update_button(item);
-        get_data.forEach(function(element)
-        {
-            if(element["label"] === item) {
-                document.getElementById("label").value = element["label"];
-                document.getElementById("description").value = element["description"];
-            }
-        });
-    }
-
-    window.addEventListener("load", start, false);
-</script>
+<script>var get_data = <?php echo json_encode(get_items()); ?>;</script>
+<script type="text/javascript" src="js/title_listen.js"></script>
 </body>
 </html>

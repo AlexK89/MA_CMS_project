@@ -8,11 +8,11 @@
 
 $page_name = stripslashes("about_page");
 
-include ("set_connection.php");
-include ("add_functions.php");
-include ("update_functions.php");
-include ("delete_functions.php");
-include ("duplicate_protection.php");
+include("set_connection.php");
+include("add_functions.php");
+include("update_functions.php");
+include("delete_functions.php");
+include("duplicate_protection.php");
 
 $table_name = stripslashes("about_page_items");
 $project_url = "";
@@ -22,7 +22,7 @@ if(isset($_POST["update_about"])) {
     $about_welcome_text = $_POST["about_welcome_text"];
 
     if(update_about_data($about_welcome_text)) {
-        header("Location: about_page.php");
+        header("Location: ../about_page.php?success=Data updated");
         exit();
     }
 }
@@ -33,15 +33,15 @@ if (isset($_POST["add"])) {
 
     if ($label && $description && duplicates_protection($label, $no_duplicates)) {
         if(add_content($label, $description, $img_url, $project_url, $table_name)) {
-            include ("upload.php");
-            header("Location: about_page.php?success=Data added");
+            include("upload.php");
+            header("Location: ../about_page.php?success=Data added");
             exit();
         }
     } else if(duplicates_protection($label, $no_duplicates) === false) {
-        header("Location: about_page.php?error=This section already exist");
+        header("Location: ../about_page.php?error=This section already exist");
         exit();
     } else {
-        header("Location: about_page.php?error=Fill inputs");
+        header("Location: ../about_page.php?error=Fill inputs");
         exit();
     }
 
@@ -52,18 +52,18 @@ if (isset($_POST["update"])) {
     $img_url = $_FILES["file_To_Upload"]["name"];
     if ($img_url || $label || $description) {
         if(edit_form($label, $description, $img_url, $project_url, $table_name)) {
-            include ("upload.php");
-            header("Location: about_page.php?success=Data updated");
+            include("upload.php");
+            header("Location: ../about_page.php?success=Data updated");
             exit();
         }
     } else {
-        header("Location: about_page.php?error=Fill the form please");
+        header("Location: ../about_page.php?error=Fill the form please");
         exit();
     }
 }
 if (isset($_POST["delete"])) {
     if(delete_item($table_name)) {
-        header("Location: about_page.php?success=Data removed");
+        header("Location: ../about_page.php?success=Data removed");
         exit();
     }
 }

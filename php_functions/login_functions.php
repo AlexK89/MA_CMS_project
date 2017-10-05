@@ -66,7 +66,7 @@ function check_data($our_user, $our_user_pass) {
 
 if  (isset($_POST["submit"])){
     if (submit_form($our_user, $our_user_pass, $_POST["user_name"], $_POST["password"]) === 1) {
-        header("Location: home_page.php");
+        header("Location: main_page.html");
     } else {
         echo submit_form($our_user, $our_user_pass, $_POST["user_name"], $_POST["password"]);
     }

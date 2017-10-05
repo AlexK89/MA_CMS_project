@@ -1,3 +1,6 @@
+<?php
+    include("./php_functions/login_functions.php");
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -24,7 +27,6 @@
         <input type="submit" name="submit" value="Log In">
     </div>
     <?php
-    include("./php_functions/login_functions.php");
     if (check_data($our_user, $our_user_pass)) {
         header("Location: main_page.php");
         exit;

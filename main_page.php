@@ -24,7 +24,7 @@ if (!check_data($our_user, $our_user_pass)) {
 <header class="page_header">
     <div class="container">
         <div class="page_header_label">
-            <p>Welcome, Vasile</p>
+            <p><a href="main_page.php">Welcome, Vasile</a></p>
         </div>
         <div class="page_header_logoff">
             <form action="log_in.php" method="POST">

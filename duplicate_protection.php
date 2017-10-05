@@ -8,6 +8,12 @@
 
 $no_duplicates = true;
 
+/*
+ * duplicates_protection - checking input label for duplicates
+ * @param $label - label input data
+ * @param $no_duplicates - duplicates existence state
+ * return boolean - true or false for duplicates existence
+ */
 function duplicates_protection($label, $no_duplicates)
 {
     $data = get_items();

@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89afb501-f69e-4317-ba7f-accfb1eaeeb7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/about_functions.php" afterPath="$PROJECT_DIR$/about_functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home_functions.php" afterPath="$PROJECT_DIR$/home_functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portfolio_functions.php" afterPath="$PROJECT_DIR$/portfolio_functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload.php" afterPath="$PROJECT_DIR$/upload.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/duplicate_protection.php" afterPath="$PROJECT_DIR$/duplicate_protection.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,15 +21,38 @@
     <splitter split-orientation="horizontal" split-proportion="0.41106042">
       <split-first>
         <leaf>
-          <file leaf-file-name="home_page.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="home_page.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/home_page.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="120">
-                  <caret line="54" column="5" lean-forward="true" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+                <state relative-caret-position="96">
+                  <caret line="53" column="6" lean-forward="true" selection-start-line="53" selection-start-column="6" selection-end-line="53" selection-end-column="6" />
                   <folding>
                     <marker date="1507191835370" expanded="true" signature="91:110" ph="..." />
                     <marker date="1507191835370" expanded="true" signature="368:390" ph="..." />
                     <marker date="1507191835370" expanded="true" signature="373:390" ph="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="duplicate_protection.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/duplicate_protection.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="207">
+                  <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="add_functions.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/add_functions.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="92">
+                  <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="42" />
+                  <folding>
+                    <marker date="1507189883138" expanded="true" signature="594:702" ph="INSERT INTO `${$table_name}`... " />
+                    <marker date="1507189883138" expanded="true" signature="762:899" ph="INSERT INTO `${$table_name}`... " />
                   </folding>
                 </state>
               </provider>
@@ -143,11 +163,11 @@
         <option value="$PROJECT_DIR$/delete_functions.php" />
         <option value="$PROJECT_DIR$/update_functions.php" />
         <option value="$PROJECT_DIR$/home_page.php" />
-        <option value="$PROJECT_DIR$/duplicate_protection.php" />
         <option value="$PROJECT_DIR$/upload.php" />
         <option value="$PROJECT_DIR$/about_functions.php" />
         <option value="$PROJECT_DIR$/portfolio_functions.php" />
         <option value="$PROJECT_DIR$/home_functions.php" />
+        <option value="$PROJECT_DIR$/duplicate_protection.php" />
       </list>
     </option>
   </component>
@@ -225,12 +245,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1506935845995</updated>
-      <workItem from="1506935847245" duration="81101000" />
+      <workItem from="1506935847245" duration="81443000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81101000" />
+    <option name="totallyTimeSpent" value="81443000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1680" y="0" width="1920" height="1200" extended-state="0" />
@@ -437,25 +457,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/duplicate_protection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/add_functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding>
-            <marker date="1507189883138" expanded="true" signature="594:702" ph="INSERT INTO `${$table_name}`... " />
-            <marker date="1507189883138" expanded="true" signature="762:899" ph="INSERT INTO `${$table_name}`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/delete_functions.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -478,18 +479,6 @@
             <marker date="1507190653398" expanded="true" signature="2204:2301" ph="UPDATE `` SE... " />
             <marker date="1507190653398" expanded="true" signature="2971:2989" ph="SELECT `id` " />
             <marker date="1507190653398" expanded="true" signature="2971:3047" ph="SELECT `id` " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home_page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="54" column="5" lean-forward="true" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
-          <folding>
-            <marker date="1507191835370" expanded="true" signature="91:110" ph="..." />
-            <marker date="1507191835370" expanded="true" signature="368:390" ph="..." />
-            <marker date="1507191835370" expanded="true" signature="373:390" ph="..." />
           </folding>
         </state>
       </provider>
@@ -539,6 +528,37 @@
           <folding>
             <marker date="1507195480023" expanded="true" signature="2156:2233" ph="SELECT `labe... portfolio_page" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home_page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="53" column="6" lean-forward="true" selection-start-line="53" selection-start-column="6" selection-end-line="53" selection-end-column="6" />
+          <folding>
+            <marker date="1507191835370" expanded="true" signature="91:110" ph="..." />
+            <marker date="1507191835370" expanded="true" signature="368:390" ph="..." />
+            <marker date="1507191835370" expanded="true" signature="373:390" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/add_functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="42" />
+          <folding>
+            <marker date="1507189883138" expanded="true" signature="594:702" ph="INSERT INTO `${$table_name}`... " />
+            <marker date="1507189883138" expanded="true" signature="762:899" ph="INSERT INTO `${$table_name}`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/duplicate_protection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>

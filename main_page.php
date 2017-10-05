@@ -38,10 +38,10 @@ if (!check_data($our_user, $our_user_pass)) {
 </header>
 <aside class="sidebar">
     <nav class= "navigation_bar">
-        <ul>
-            <li><a href="home_page.php">Home page</a></li>
-            <li><a href="about_page.php">About page</a></li>
-            <li><a href="portfolio_page.php">Portfolio page</a></li>
+        <ul class="tab_list">
+            <li class="tab"><a href="home_page.php">Home page</a></li>
+            <li class="tab"><a href="about_page.php">About page</a></li>
+            <li class="tab"><a href="portfolio_page.php">Portfolio page</a></li>
         </ul>
     </nav>
 </aside>

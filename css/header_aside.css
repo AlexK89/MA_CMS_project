@@ -12,6 +12,7 @@ body {
 .container {
     width: 90%;
     margin: 0 5%;
+    overflow: auto;
 }
 
 /*Header*/
@@ -98,7 +99,7 @@ body {
 .navigation_bar li {
     height: 50px;
     width: 95%;
-    margin: 10px -5% 0;
+    margin: 10px -10% 0;
     padding: 0 20px;
     background-color: #00BC8B;
     font-weight: bold;
@@ -109,14 +110,25 @@ body {
     -o-transition: .3s;
     transition: .3s;
 }
-.navigation_bar li:hover {
+.tab_list li.selected_tab {
+    background-color: #bc4e47;
+}
+.tab_list:hover .selected_tab {
+    margin: 10px -10% 0;
+}
+.tab:hover,
+.tab_list li.selected_tab,
+.tab_list li.selected_tab:hover {
     margin: 10px 0;
+}
+.tab:hover {
     background-color: #00d59e;
 }
+
 .navigation_bar a {
     display: block;
     width: 100%;
-    padding-left: 10%;
+    padding-left: 15%;
     text-decoration: none;
     color: #fff;
     font-size: 2rem;

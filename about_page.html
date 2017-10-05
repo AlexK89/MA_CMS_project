@@ -1,10 +1,10 @@
 <?php
-include ("./php_functions/about_functions.php");
-include ("./php_functions/login_functions.php");
-if (!check_data($our_user, $our_user_pass)) {
-    header("Location: log_in.php");
-    exit;
-}
+    include ("./php_functions/about_functions.php");
+    include ("./php_functions/login_functions.php");
+    if (!check_data($our_user, $our_user_pass)) {
+        header("Location: log_in.php");
+        exit;
+    }
 ?>
 <!doctype html>
 <html lang="en">
@@ -57,13 +57,13 @@ if (!check_data($our_user, $our_user_pass)) {
             </div>
         </form>
         <h3 class="form_label">ADD/Modify content form</h3>
-        <form action="php_functions/about_functions.php" method="POST" enctype="multipart/form-data" class="main_form">
+        <form action="php_functions/home_functions.php" method="POST" enctype="multipart/form-data" class="main_form">
             <div class="form_block">
                 <select name="select_options" id="select_options" class="input_area select_block">
                     <option value="add">Add / Select</option>
                     <?php
-                    get_items_list();
-                    ?>
+                get_items_list();
+            ?>
                 </select>
             </div>
             <div class="form_block">
@@ -85,12 +85,12 @@ if (!check_data($our_user, $our_user_pass)) {
             </div>
             <h4 class="error">
                 <?php
-                if ($_GET["error"]) {
-                    echo $_GET["error"];
-                } else if ($_GET["success"]) {
-                    echo $_GET["success"];
-                }
-                ?>
+        if ($_GET["error"]) {
+            echo $_GET["error"];
+        } else if ($_GET["success"]) {
+            echo $_GET["success"];
+        }
+    ?>
             </h4>
         </form>
     </div>

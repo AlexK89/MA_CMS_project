@@ -8,6 +8,15 @@
     width: 500px;
     margin: 0 auto;
 }
+.about_form {
+    width: 70%;
+}
+.submission_buttons.about_form_button {
+    justify-content: space-around;
+}
+.submission_buttons.about_form_button input {
+    width: 300px;
+}
 .input_area {
     width: 100%;
     margin: 10px 0;

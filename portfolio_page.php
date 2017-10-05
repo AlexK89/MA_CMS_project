@@ -1,4 +1,11 @@
-<?php include ("portfolio_functions.php"); ?>
+<?php
+include ("portfolio_functions.php");
+include ("./login_session/function.php");
+if (!check_data($our_user, $our_user_pass)) {
+    header("Location: ./login_session/log_in.php");
+    exit;
+}
+?>
 
 <!doctype html>
 <html lang="en">
@@ -52,6 +59,12 @@
     }
     ?>
 </h4>
+<form action="./login_session/log_in.php" method="post">
+    <div class="submit_button">
+        <label for="destroy"></label>
+        <input type="submit" name="destroy" value="Log out">
+    </div>
+</form>
 <script>
     var get_data = <?php echo json_encode(get_items()); ?>;
 

@@ -1,8 +1,10 @@
-
-
-<?php include ("home_functions.php"); ?>
 <?php
-
+    include ("home_functions.php");
+    include ("./login_session/function.php");
+    if (!check_data($our_user, $our_user_pass)) {
+        header("Location: ./login_session/log_in.php");
+        exit;
+    }
 ?>
 <!doctype html>
 <html lang="en">
@@ -25,7 +27,7 @@
         <select name="select_options" id="select_options">
             <option value="add">Add</option>
             <?php
-            get_items_list();
+                get_items_list();
             ?>
         </select>
     </div>
@@ -46,13 +48,19 @@
 </form>
 <h4 class="error">
     <?php
-    if ($_GET["error"]) {
-        echo $_GET["error"];
-    } else if ($_GET["success"]) {
-        echo $_GET["success"];
-    }
+        if ($_GET["error"]) {
+            echo $_GET["error"];
+        } else if ($_GET["success"]) {
+            echo $_GET["success"];
+        }
     ?>
 </h4>
+<form action="./login_session/log_in.php" method="post">
+    <div class="submit_destroy_button">
+        <label for="destroy"></label>
+        <input type="submit" name="destroy" value="Log out">
+    </div>
+</form>
 <script>
     var get_data = <?php echo json_encode(get_items()); ?>;
 

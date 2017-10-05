@@ -26,7 +26,7 @@
     <?php
     include("./php_functions/login_functions.php");
     if (check_data($our_user, $our_user_pass)) {
-        header("Location: main_page.html");
+        header("Location: main_page.php");
         exit;
     }
     ?>

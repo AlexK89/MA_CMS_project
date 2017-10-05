@@ -1,5 +1,9 @@
-<?php include ("home_functions.php"); ?>
 
+
+<?php include ("home_functions.php"); ?>
+<?php
+
+?>
 <!doctype html>
 <html lang="en">
 <head>

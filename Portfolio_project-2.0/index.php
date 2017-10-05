@@ -172,7 +172,7 @@ Cooperating with me, you defenately get ...
 		function parallax(){
             var scrolled = $(window).scrollTop();
             $('.header_background').css('top',-(scrolled*0.15)+'px');
-            $('.statistics_background').css('top',-(scrolled*0.15)+'px');
+            $('.statistics_background').css('top',-(scrolled*0.1)+'px');
         }
 	</script>
 </body>

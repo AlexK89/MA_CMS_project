@@ -4,7 +4,7 @@
     text-align: center;
 }
 .projects_number {
-    font-size: 12rem;
+    font-size: 9rem;
     margin: 40px;
 }
 .project_number_label {
@@ -13,7 +13,7 @@
 .technologies {
     color: #00BC8B;
     background: #00BC8B;
-    margin: 70px 0;
+    margin: 40px 0;
     padding: 60px 0;
     border-radius: 10px;
     text-align: center;

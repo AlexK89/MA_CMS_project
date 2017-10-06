@@ -15,6 +15,7 @@ if (!check_data($our_user, $our_user_pass)) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="Portfolio_project-2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/header_aside.css">
     <link rel="stylesheet" href="css/main_page.css">
@@ -24,7 +25,7 @@ if (!check_data($our_user, $our_user_pass)) {
 <header class="page_header">
     <div class="container">
         <div class="page_header_label">
-            <p><a href="main_page.php">Welcome, Vasile</a></p>
+            <p><a class="toggle_ancher" onclick="toggle_menu(event)"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></a><a href="main_page.php" class="welcome_title">Welcome, Vasile</a></p>
         </div>
         <div class="page_header_logoff">
             <form action="log_in.php" method="POST">
@@ -88,6 +89,7 @@ if (!check_data($our_user, $our_user_pass)) {
 
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="./js/sibebar_menu.js"></script>
 <script>
     $('.projects_number').each(function () {
         $(this).prop('Counter',0).animate({

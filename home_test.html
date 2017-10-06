@@ -7,16 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="Portfolio_project-2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/header_aside.css">
     <link rel="stylesheet" href="css/home_page.css">
-    <title>HOME Page || Main page</title>
+    <title>HOME Page || CMS</title>
 </head>
 <body>
 <header class="page_header">
     <div class="container">
         <div class="page_header_label">
-            <p><a href="#">Welcome, Vasile</a></p>
+            <p><a class="toggle_ancher" onclick="toggle_menu(event)"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></a><a href="main_page.php" class="welcome_title">Welcome, Vasile</a></p>
         </div>
         <div class="page_header_logoff">
             <form action="log_in.php" method="POST">
@@ -28,12 +29,12 @@
         </div>
     </div>
 </header>
-<aside class="sidebar">
-    <nav class= "navigation_bar">
-        <ul>
-            <li><a href="home_page.php">Home page</a></li>
-            <li><a href="about_page.php">About page</a></li>
-            <li><a href="portfolio_page.php">Portfolio page</a></li>
+<aside class="sidebar" id="sidebar">
+    <nav class="navigation_bar">
+        <ul class="tab_list">
+            <li class="selected_tab"><a href="home_page.php">Home page</a></li>
+            <li class="tab"><a href="about_page.php">About page</a></li>
+            <li class="tab"><a href="portfolio_page.php">Portfolio page</a></li>
         </ul>
     </nav>
 </aside>
@@ -44,8 +45,9 @@
             <div class="form_block">
                 <select name="select_options" id="select_options" class="input_area select_block">
                     <option value="add">Add / Select</option>
-                    <option value="add">Add</option>
-                    <option value="add">Add</option>
+                    <?php
+                    get_items_list();
+                    ?>
                 </select>
             </div>
             <div class="form_block">
@@ -66,31 +68,12 @@
                 <input type="submit" name="delete" value="DELETE" class="delete">
             </div>
             <h4 class="error">
-                error
+
             </h4>
         </form>
-
-
-        <div class="item">
-            <div class="item_content_img" id="item_content_img">
-            </div>
-            <div class="item_content">
-                <div class="item_content_header">
-                    <h4 class="item_content_header_name">Item #1: name</h4>
-                </div>
-                <div class="item_content_body">
-                    <p class="item_content_body_text">Williamsburg tofu listicle, keffiyeh distillery fam prism yuccie XOXO thundercats poutine
-                        shoreditch heirloom hexagon. Chambray thundercats hot chicken beard williamsburg +1 gochujang
-                        green juice vegan pinterest actually. Hot chicken man bun distillery, slow-carb pork belly +1
-                        iPhone trust fund brunch flannel church-key affogato shoreditch wolf actually. Blue bottle vinyl
-                        single-origin coffee, swag helvetica meh poke XOXO bespoke skateboard next level.
-                    </p>
-                    <p class="item_content_body_text"><a href="">sdfsdfsdfsdfsdfsdfsdf</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
+        <div class="item"><div class="item_content_img"><img src="Portfolio_project-2.0/img/perfection.jpg" alt="perfection.jpg"></div><div class="item_content"><div class="item_content_header"><h4 class="item_content_header_name">Item #1: Targeting on perfection</h4></div><div class="item_content_body"><p class="item_content_body_text">some ipsum text, some ipsum text, some ipsum text, some ipsum text, some ipsum text, some ipsum text, some ipsum text, some ipsum text, some ipsum text, some ipsum text, some ipsum text, some ipsum text</p></div></div></div>
 </div>
-
+</div>
+<script src="./js/sibebar_menu.js"></script>
 </body>
 </html>

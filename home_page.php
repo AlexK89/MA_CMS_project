@@ -40,9 +40,10 @@ if (!check_data($our_user, $our_user_pass)) {
 <aside class="sidebar">
     <nav class="navigation_bar">
         <ul class="tab_list">
-            <li class="selected_tab"><a href="home_page.php">Home page</a></li>
-            <li class="tab"><a href="about_page.php">About page</a></li>
-            <li class="tab"><a href="portfolio_page.php">Portfolio page</a></li>
+            <li class="tab"><a href="main_page.php">Dashboard page</a></li>
+            <li class="selected_tab"><a href="home_page.php">Edit Home page</a></li>
+            <li class="tab"><a href="about_page.php">Edit About page</a></li>
+            <li class="tab"><a href="portfolio_page.php">Edit Portfolio page</a></li>
         </ul>
     </nav>
 </aside>

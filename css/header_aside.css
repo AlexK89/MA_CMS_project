@@ -119,6 +119,14 @@ body {
     -o-transition: .3s;
     transition: .3s;
 }
+.tab_list .portfolio_page {
+    background-color: #009cbc;
+    margin-top: 70px;
+}
+.tab_list .portfolio_page:hover {
+    background-color: #00b8d8;
+    margin-top: 70px;
+}
 .tab_list li.selected_tab {
     background-color: #bc4e47;
 }
@@ -156,6 +164,10 @@ body {
 
 /*Media query*/
 @media screen and (max-width: 920px){
+    .container {
+        width: 92%;
+        margin: 0 4%;
+    }
     .page_header_label a {
         color: #fff;
     }

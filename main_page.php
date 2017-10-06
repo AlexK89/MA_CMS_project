@@ -44,6 +44,7 @@ if (!check_data($our_user, $our_user_pass)) {
             <li class="tab"><a href="home_page.php">Edit Home page</a></li>
             <li class="tab"><a href="about_page.php">Edit About page</a></li>
             <li class="tab"><a href="portfolio_page.php">Edit Portfolio page</a></li>
+            <li class="tab portfolio_page"><a href="./Portfolio_project-2.0/index.php">Go to Portfolio page</a></li>
         </ul>
     </nav>
 </aside>

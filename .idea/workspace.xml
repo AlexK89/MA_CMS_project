@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89afb501-f69e-4317-ba7f-accfb1eaeeb7" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Portfolio_project-2.0/img/birthday.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Portfolio_project-2.0/img/birthday_2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Portfolio_project-2.0/img/calendar.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Portfolio_project-2.0/img/equipment.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Portfolio_project-2.0/img/perfection.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Portfolio_project-2.0/img/time.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/about_page.php" afterPath="$PROJECT_DIR$/about_page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/header_aside.css" afterPath="$PROJECT_DIR$/css/header_aside.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home_page.php" afterPath="$PROJECT_DIR$/home_page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home_test.html" afterPath="$PROJECT_DIR$/home_test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main_page.php" afterPath="$PROJECT_DIR$/main_page.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portfolio_page.php" afterPath="$PROJECT_DIR$/portfolio_page.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,88 +27,41 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.72106826">
-      <split-first>
-        <leaf>
-          <file leaf-file-name="home_test.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/home_test.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="844">
-                  <caret line="37" column="12" lean-forward="true" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="101" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="main_page.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/main_page.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="757">
-                  <caret line="46" column="116" lean-forward="false" selection-start-line="46" selection-start-column="116" selection-end-line="46" selection-end-column="116" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="home_page.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/home_page.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="744">
-                  <caret line="45" column="12" lean-forward="true" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="116" />
-                  <folding>
-                    <marker date="1507290356837" expanded="true" signature="238:257" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="about_page.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/about_page.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="846">
-                  <caret line="42" column="70" lean-forward="true" selection-start-line="42" selection-start-column="70" selection-end-line="42" selection-end-column="70" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="portfolio_page.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/portfolio_page.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="863">
-                  <caret line="44" column="77" lean-forward="true" selection-start-line="44" selection-start-column="77" selection-end-line="44" selection-end-column="77" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="home_page.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/css/home_page.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="702">
-                  <caret line="191" column="5" lean-forward="false" selection-start-line="191" selection-start-column="5" selection-end-line="191" selection-end-column="5" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="header_aside.css" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/css/header_aside.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="732">
-                  <caret line="123" column="21" lean-forward="true" selection-start-line="123" selection-start-column="21" selection-end-line="123" selection-end-column="21" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="home_page.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/home_page.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4393">
+              <caret line="191" column="5" lean-forward="false" selection-start-line="191" selection-start-column="5" selection-end-line="191" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header_aside.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/header_aside.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="732">
+              <caret line="123" column="21" lean-forward="true" selection-start-line="123" selection-start-column="21" selection-end-line="123" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="about_functions.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/php_functions/about_functions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="32">
+              <caret line="79" column="16" lean-forward="false" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="18" />
+              <folding>
+                <marker date="1507203426649" expanded="true" signature="2304:2342" ph="SELECT `abou... about_block" />
+                <marker date="1507203426649" expanded="true" signature="3122:3186" ph="SELECT `labe... about_page_items" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -196,10 +153,10 @@
         <option value="$PROJECT_DIR$/css/home_page.css" />
         <option value="$PROJECT_DIR$/home_test.html" />
         <option value="$PROJECT_DIR$/css/header_aside.css" />
-        <option value="$PROJECT_DIR$/home_page.php" />
         <option value="$PROJECT_DIR$/main_page.php" />
-        <option value="$PROJECT_DIR$/about_page.php" />
         <option value="$PROJECT_DIR$/portfolio_page.php" />
+        <option value="$PROJECT_DIR$/about_page.php" />
+        <option value="$PROJECT_DIR$/home_page.php" />
       </list>
     </option>
   </component>
@@ -210,10 +167,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="1680" />
-    <option name="width" value="1920" />
-    <option name="height" value="1200" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="width" value="1680" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -250,14 +206,14 @@
             <path>
               <item name="cms_project" type="b2602c69:ProjectViewProjectNode" />
               <item name="cms_project" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Portfolio_project-2.0" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="php_functions" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -300,18 +256,19 @@
       <option name="presentableId" value="Default" />
       <updated>1506935845995</updated>
       <workItem from="1506935847245" duration="117383000" />
-      <workItem from="1507276008197" duration="10258000" />
+      <workItem from="1507276008197" duration="10579000" />
+      <workItem from="1507579373918" duration="88000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127641000" />
+    <option name="totallyTimeSpent" value="128050000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1680" y="0" width="1920" height="1200" extended-state="0" />
+    <frame x="0" y="22" width="1680" height="957" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.122395836" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.122023806" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -341,6 +298,22 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/css/home_page.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4393">
+          <caret line="191" column="5" lean-forward="false" selection-start-line="191" selection-start-column="5" selection-end-line="191" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/header_aside.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2829">
+          <caret line="123" column="21" lean-forward="true" selection-start-line="123" selection-start-column="21" selection-end-line="123" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/functions.php" />
     <entry file="file://$PROJECT_DIR$/content_form.php" />
     <entry file="file://$PROJECT_DIR$/test.php" />
@@ -388,7 +361,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="545">
           <caret line="40" column="77" lean-forward="false" selection-start-line="40" selection-start-column="77" selection-end-line="40" selection-end-column="77" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -473,7 +445,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="587">
           <caret line="67" column="4" lean-forward="false" selection-start-line="67" selection-start-column="4" selection-end-line="68" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -481,18 +452,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="121">
           <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php_functions/about_functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="886">
-          <caret line="120" column="12" lean-forward="false" selection-start-line="120" selection-start-column="12" selection-end-line="120" selection-end-column="12" />
-          <folding>
-            <marker date="1507203426649" expanded="true" signature="2304:2342" ph="SELECT `abou... about_block" />
-            <marker date="1507203426649" expanded="true" signature="3122:3186" ph="SELECT `labe... about_page_items" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -607,7 +566,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/home_page.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
+        <state relative-caret-position="4393">
           <caret line="191" column="5" lean-forward="false" selection-start-line="191" selection-start-column="5" selection-end-line="191" selection-end-column="5" />
           <folding />
         </state>
@@ -625,17 +584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="844">
           <caret line="37" column="12" lean-forward="true" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="101" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home_page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="744">
-          <caret line="45" column="12" lean-forward="true" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="116" />
-          <folding>
-            <marker date="1507290356837" expanded="true" signature="238:257" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -647,19 +595,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/home_page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="21" column="20" lean-forward="false" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+          <folding>
+            <marker date="1507293369846" expanded="true" signature="238:257" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/about_page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="846">
-          <caret line="42" column="70" lean-forward="true" selection-start-line="42" selection-start-column="70" selection-end-line="42" selection-end-column="70" />
+        <state relative-caret-position="363">
+          <caret line="21" column="16" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/portfolio_page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="863">
-          <caret line="44" column="77" lean-forward="true" selection-start-line="44" selection-start-column="77" selection-end-line="44" selection-end-column="77" />
+        <state relative-caret-position="334">
+          <caret line="21" column="15" lean-forward="false" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="15" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php_functions/about_functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="79" column="16" lean-forward="false" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="18" />
+          <folding>
+            <marker date="1507203426649" expanded="true" signature="2304:2342" ph="SELECT `abou... about_block" />
+            <marker date="1507203426649" expanded="true" signature="3122:3186" ph="SELECT `labe... about_page_items" />
+          </folding>
         </state>
       </provider>
     </entry>

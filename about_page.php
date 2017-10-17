@@ -19,7 +19,7 @@ if (!check_data($our_user, $our_user_pass)) {
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/header_aside.css">
     <link rel="stylesheet" href="css/home_page.css">
-    <title>About Page || CMS</title>
+    <title>Edit About Page || CMS</title>
 </head>
 <body>
 <header class="page_header">
